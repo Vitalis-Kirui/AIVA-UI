@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-adding',
@@ -11,7 +12,7 @@ export class AddingComponent implements OnInit {
   // Adding form variable
   stockadditionform!: FormGroup;
 
-  constructor(private fbservice:FormBuilder) { }
+  constructor(private fbservice:FormBuilder, private router : Router) { }
 
   ngOnInit() {
 
@@ -53,6 +54,13 @@ export class AddingComponent implements OnInit {
 
     console.log(this.stockadditionform.value)
     this.stockadditionform.reset();
+
+  }
+
+  // Go back function
+  goback() {
+
+    this.router.navigate(['menu']);
     
   }
 
