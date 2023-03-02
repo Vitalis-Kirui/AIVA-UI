@@ -11,36 +11,36 @@
     <!-- Addition form -->
     <div class="form">
 
-        <form action="">
+        <form action="" [formGroup]="stockadditionform">
 
             <!-- Product's name -->
             <div class="form-group">
                 <label for="" class="mb-1 my-2">Product Name</label>
-                <input type="text" class="form-control">
+                <input type="text" class="form-control" name="name" formControlName="name">
             </div>
 
             <!-- Description -->
             <div class="form-group">
                 <label for="" class="mb-1 my-3">Product Description</label>
-                <input type="text" class="form-control">
+                <input type="text" class="form-control" name="description" formControlName="description">
             </div>
 
             <!-- Quantity -->
             <div class="form-group">
                 <label for="" class="mb-1 my-3">Quanity</label>
-                <input type="number" class="form-control">
+                <input type="number" class="form-control" name="quantity" formControlName="quantity">
             </div>
 
             <!-- Buying Price -->
             <div class="form-group">
                 <label for="" class="mb-1 my-3">Buying Price/Item</label>
-                <input type="number" class="form-control">
+                <input type="number" class="form-control" name="buyingprice" formControlName="buyingprice">
             </div>
 
             <!-- Selling price -->
             <div class="form-group">
                 <label for="" class="mb-1 my-3">Selling Price/Item</label>
-                <input type="number" class="form-control">
+                <input type="number" class="form-control" name="sellingprice" formControlName="sellingprice">
             </div>
 
             <!-- Addition button -->
