@@ -11,7 +11,7 @@
     <!-- Addition form -->
     <div class="form">
 
-        <form action="" [formGroup]="stockadditionform">
+        <form action="" [formGroup]="stockadditionform" (ngSubmit)="additem()">
 
             <!-- Product's name -->
             <div class="form-group">
@@ -67,7 +67,7 @@
             </div>
 
             <!-- Addition button -->
-            <button class="btn btn-primary btn-rounded m-3" type="button" [disabled]="stockadditionform.invalid">Add
+            <button class="btn btn-primary btn-rounded m-3" type="submit" [disabled]="stockadditionform.invalid">Add
                 Item</button>
 
         </form>

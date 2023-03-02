@@ -48,4 +48,12 @@ export class AddingComponent implements OnInit {
     return this.stockadditionform.get('sellingprice');
   }
 
+  // Add Item function
+  additem() {
+
+    console.log(this.stockadditionform.value)
+    this.stockadditionform.reset();
+    
+  }
+
 }
