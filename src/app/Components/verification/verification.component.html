@@ -10,7 +10,7 @@
                 <input type="text" class="form-control" name="staffnumber" formControlName="staffnumber">
             </div>
 
-            <button class="btn btn-primary btn-rounded m-2" (click)="verifystaffnumber()">Verify</button>
+            <button class="btn btn-primary btn-rounded m-2" (click)="verifystaffnumber()" [disabled]="verificationform.invalid">Verify</button>
 
         </form>
 

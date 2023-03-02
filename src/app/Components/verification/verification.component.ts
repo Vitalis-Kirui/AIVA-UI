@@ -20,6 +20,7 @@ export class VerificationComponent implements OnInit {
   // Verify function
   verifystaffnumber() {
 
+    console.log(this.verificationform.value);
     this.success = true;
     this.router.navigate(['menu']);
     
@@ -28,7 +29,7 @@ export class VerificationComponent implements OnInit {
   ngOnInit() {
 
     this.verificationform = this.fbservice.group({
-      staffnumber:['', [Validators.required]]
+      staffnumber:['', [Validators.required, Validators.minLength(5)]]
     })
 
   }
