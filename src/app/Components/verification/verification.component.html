@@ -7,10 +7,20 @@
 
             <div class="form-group">
                 <label for="" class="mb-2">Enter your staff number</label>
-                <input type="text" class="form-control" name="staffnumber" formControlName="staffnumber">
+                <input type="text" class="form-control" name="staffnumber" formControlName="staffnumber"
+                [class.is-invalid]="staffnumber?.invalid && staffnumber?.dirty"
+                >
+
+                <!-- Error messages -->
+                <div class="text-danger" *ngIf="staffnumber?.invalid && staffnumber?.dirty">
+                    <small *ngIf="staffnumber?.errors?.['required']">Staff number is required</small>
+                    <small *ngIf="staffnumber?.errors?.['minlength']">Staff number must be at least 5 characters</small>
+                </div>
+
             </div>
 
-            <button class="btn btn-primary btn-rounded m-2" (click)="verifystaffnumber()" [disabled]="verificationform.invalid">Verify</button>
+            <button class="btn btn-primary btn-rounded m-2" (click)="verifystaffnumber()"
+                [disabled]="verificationform.invalid">Verify</button>
 
         </form>
 

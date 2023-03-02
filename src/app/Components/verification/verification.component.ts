@@ -34,4 +34,9 @@ export class VerificationComponent implements OnInit {
 
   }
 
+  // Getter function
+  get staffnumber() {
+    return this.verificationform.get('staffnumber');
+  }
+
 }

@@ -12,3 +12,7 @@ label{
 button:hover{
     font-size: 15px;
 }
+
+small{
+    font-weight: 500;
+}
