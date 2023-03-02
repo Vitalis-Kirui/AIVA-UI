@@ -12,6 +12,7 @@ import { StaffsComponent } from './Components/staffs/staffs.component';
 import { ReportsComponent } from './Components/reports/reports.component';
 import { VerificationComponent } from './Components/verification/verification.component';
 import { Error404Component } from './Components/error404/error404.component';
+import { MenuComponent } from './Components/menu/menu.component';
 
 @NgModule({
   declarations: [
@@ -24,7 +25,8 @@ import { Error404Component } from './Components/error404/error404.component';
     StaffsComponent,
     ReportsComponent,
     VerificationComponent,
-    Error404Component
+    Error404Component,
+    MenuComponent
   ],
   imports: [
     BrowserModule,

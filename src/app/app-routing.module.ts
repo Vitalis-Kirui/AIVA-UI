@@ -5,6 +5,7 @@ import { CyberComponent } from './Components/cyber/cyber.component';
 import { Error404Component } from './Components/error404/error404.component';
 import { ExpensesComponent } from './Components/expenses/expenses.component';
 import { HomeComponent } from './Components/home/home.component';
+import { MenuComponent } from './Components/menu/menu.component';
 import { ReportsComponent } from './Components/reports/reports.component';
 import { SalesComponent } from './Components/sales/sales.component';
 import { StaffsComponent } from './Components/staffs/staffs.component';
@@ -19,6 +20,7 @@ const routes: Routes = [
   { path: 'reports', component: ReportsComponent },
   { path: 'sales', component: SalesComponent },
   { path: 'staffs', component: StaffsComponent },
+  { path: 'menu', component: MenuComponent },
   { path: '**', component: Error404Component },
 ];
 

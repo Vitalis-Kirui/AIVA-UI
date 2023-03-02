@@ -17,7 +17,7 @@ export class VerificationComponent implements OnInit {
   verifystaffnumber() {
 
     this.success = true;
-    this.router.navigate(['home']);
+    this.router.navigate(['menu']);
     
   }
 
