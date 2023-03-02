@@ -26,4 +26,26 @@ export class AddingComponent implements OnInit {
 
   }
 
+  // Getter functions
+
+  // Name
+  get name() {
+    return this.stockadditionform.get('name');
+  }
+
+  // Quantity
+  get quantity() {
+    return this.stockadditionform.get('quantity');
+  }
+
+  // Buying price 
+  get buyingprice() {
+    return this.stockadditionform.get('buyingprice');
+  }
+
+  // Selling price
+  get sellingprice() {
+    return this.stockadditionform.get('sellingprice');
+  }
+
 }
