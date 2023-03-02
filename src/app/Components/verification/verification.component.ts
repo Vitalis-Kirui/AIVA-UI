@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 
 @Component({
@@ -9,9 +10,12 @@ import { Router } from '@angular/router';
 export class VerificationComponent implements OnInit {
 
   // Success verification
-  success : boolean = false;
+  success: boolean = false;
+  
+  // Form variable
+  verificationform!:FormGroup
 
-  constructor(private router:Router) { }
+  constructor(private router:Router, private fbservice:FormBuilder) { }
 
   // Verify function
   verifystaffnumber() {
@@ -21,7 +25,12 @@ export class VerificationComponent implements OnInit {
     
   }
 
-  ngOnInit(): void {
+  ngOnInit() {
+
+    this.verificationform = this.fbservice.group({
+      staffnumber:['', [Validators.required]]
+    })
+
   }
 
 }

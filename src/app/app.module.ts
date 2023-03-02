@@ -13,6 +13,7 @@ import { ReportsComponent } from './Components/reports/reports.component';
 import { VerificationComponent } from './Components/verification/verification.component';
 import { Error404Component } from './Components/error404/error404.component';
 import { MenuComponent } from './Components/menu/menu.component';
+import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -30,6 +31,7 @@ import { MenuComponent } from './Components/menu/menu.component';
   ],
   imports: [
     BrowserModule,
+    ReactiveFormsModule,
     AppRoutingModule
   ],
   providers: [],

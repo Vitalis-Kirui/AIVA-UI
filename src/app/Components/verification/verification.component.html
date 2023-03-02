@@ -3,11 +3,11 @@
     <!-- verification form -->
     <div class="form">
 
-        <form action="">
+        <form action="" [formGroup]="verificationform">
 
             <div class="form-group">
                 <label for="" class="mb-2">Enter your staff number</label>
-                <input type="text" class="form-control">
+                <input type="text" class="form-control" name="staffnumber" formControlName="staffnumber">
             </div>
 
             <button class="btn btn-primary btn-rounded m-2" (click)="verifystaffnumber()">Verify</button>
