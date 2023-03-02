@@ -10,6 +10,8 @@ import { AddingComponent } from './Components/adding/adding.component';
 import { ExpensesComponent } from './Components/expenses/expenses.component';
 import { StaffsComponent } from './Components/staffs/staffs.component';
 import { ReportsComponent } from './Components/reports/reports.component';
+import { VerificationComponent } from './Components/verification/verification.component';
+import { Error404Component } from './Components/error404/error404.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +22,9 @@ import { ReportsComponent } from './Components/reports/reports.component';
     AddingComponent,
     ExpensesComponent,
     StaffsComponent,
-    ReportsComponent
+    ReportsComponent,
+    VerificationComponent,
+    Error404Component
   ],
   imports: [
     BrowserModule,
