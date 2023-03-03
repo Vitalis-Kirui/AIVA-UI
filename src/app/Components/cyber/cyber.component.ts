@@ -27,8 +27,8 @@ export class CyberComponent implements OnInit {
 
     // Cyber form model
     this.cyberform = this.fbservice.group({
-      name: ['', [Validators.required, Validators.minLength(3)]],
-      quantity: ['', [Validators.required]],
+      name: ['', [Validators.required]],
+      quantity: [''],
       totalcost: ['', [Validators.required]]
     });
 

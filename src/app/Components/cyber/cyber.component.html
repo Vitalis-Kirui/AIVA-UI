@@ -34,23 +34,33 @@
         <!-- Name -->
         <div class="form-group">
             <label for="" class="my-3 mb-1">Service | Item Name</label>
-            <input type="text" class="form-control">
+            <input type="text" class="form-control" name="name" formControlName="name"
+            [class.is-invalid]="name?.invalid && name?.dirty"
+            >
+
+            <!-- Error message -->
+            <small class="text-danger" *ngIf="name?.invalid && name?.dirty">Required</small>
         </div>
 
         <!-- Quantity -->
         <div class="form-group">
             <label for="" class="my-3 mb-1">Quantity</label>
-            <input type="number" class="form-control">
+            <input type="number" class="form-control" name="quantity" formControlName="quantity">
         </div>
 
         <!-- Total cost -->
         <div class="form-group">
             <label for="" class="my-3 mb-1">Total Cost</label>
-            <input type="number" class="form-control">
+            <input type="number" class="form-control" name="totalcost" formControlName="totalcost"
+            [class.is-invalid]="totalcost?.invalid && totalcost?.dirty"
+            >
+
+            <!-- Error message -->
+            <small class="text-danger" *ngIf="totalcost?.invalid && totalcost?.dirty">Required</small>
         </div>
 
         <!-- Submit for billing -->
-        <button class="btn btn-primary btn-rounded m-2" type="submit">Add Bill</button>
+        <button class="btn btn-primary btn-rounded m-2" type="submit" [disabled]="cyberform.invalid">Add Bill</button>
 
     </form>
 
