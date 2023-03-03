@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormGroup } from '@angular/forms';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-sales',
@@ -17,11 +17,12 @@ export class SalesComponent implements OnInit {
 
   billingready: boolean = false;
   
-  constructor() { }
+  constructor(private fbservice : FormBuilder) { }
 
   // Submits functions
   registerclient() {
     this.billingready = true;
+    console.log(this.clientdataform.value);
     this.clientdataform.reset();
   }
 
@@ -30,7 +31,20 @@ export class SalesComponent implements OnInit {
     
   }
 
-  ngOnInit(): void {
+  ngOnInit() {
+
+    // Client's form model
+    this.clientdataform = this.fbservice.group({
+      clientname: ['', [Validators.required, Validators.minLength(3)]]
+    })
+
+  }
+
+  // GETTER FUNCTIONS
+
+  // clientsname
+  get clientname() {
+    return this.clientdataform.get('clientname');
   }
 
 }
