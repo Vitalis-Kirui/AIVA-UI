@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { FormGroup } from '@angular/forms';
 import { Router } from '@angular/router';
 
 @Component({
@@ -7,6 +8,9 @@ import { Router } from '@angular/router';
   styleUrls: ['./staffs.component.css']
 })
 export class StaffsComponent implements OnInit {
+
+  // Form variable
+  newstaffform!: FormGroup;
 
   // Work stations
   stations: any = ['All', 'Chebunyo', 'Kaboson']
@@ -36,6 +40,14 @@ export class StaffsComponent implements OnInit {
 
     this.addnewstaff = true;
     this.seeexistingstaffs = false;
+    
+  }
+
+  // Submit staff function
+  submitstaff() {
+
+    console.log(this.newstaffform.value);
+    this.newstaffform.reset();
     
   }
 
