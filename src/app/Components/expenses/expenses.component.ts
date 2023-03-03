@@ -9,6 +9,11 @@ export class ExpensesComponent implements OnInit {
 
   constructor() { }
 
+  // Submit expense function
+  submitexpense() {
+    
+  }
+
   ngOnInit(): void {
   }
 
