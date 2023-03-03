@@ -78,7 +78,12 @@
         <!-- Transaction code -->
         <div class="form-group">
             <label for="" class="mb-1 my-3">Transaction Code</label>
-            <input type="text" class="form-control" name="code" formControlName="code">
+            <input type="text" class="form-control" name="code" formControlName="code"
+            [class.is-invalid]="code?.invalid && code?.dirty"
+            >
+
+            <!-- Error message -->
+            <small class="text-danger" *ngIf="code?.invalid">Required for M-pesa | Cheque transactions</small>
         </div>
 
         <!-- Submit item button -->
