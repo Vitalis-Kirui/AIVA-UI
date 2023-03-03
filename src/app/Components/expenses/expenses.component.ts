@@ -40,6 +40,7 @@ export class ExpensesComponent implements OnInit {
    // Submit expense function
   submitexpense() {
     console.log(this.expenseform.value);
+    this.expenseform.reset();
   }
 
 }
