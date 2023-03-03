@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-staffs',
@@ -11,7 +12,7 @@ export class StaffsComponent implements OnInit {
   seeexistingstaffs: boolean = false;
   addnewstaff: boolean = false;
 
-  constructor() { }
+  constructor(private router:Router) { }
 
   // Existing staff function
   existingstaffs() {
@@ -27,6 +28,11 @@ export class StaffsComponent implements OnInit {
     this.addnewstaff = true;
     this.seeexistingstaffs = false;
     
+  }
+
+  // Go back function
+  goback() {
+    this.router.navigate(['menu']);
   }
 
   ngOnInit(): void {
