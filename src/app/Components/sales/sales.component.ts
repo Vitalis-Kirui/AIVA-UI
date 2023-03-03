@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-sales',
@@ -17,7 +18,7 @@ export class SalesComponent implements OnInit {
 
   billingready: boolean = false;
   
-  constructor(private fbservice : FormBuilder) { }
+  constructor(private fbservice : FormBuilder, private router : Router) { }
 
   // Submits functions
   registerclient() {
@@ -35,6 +36,11 @@ export class SalesComponent implements OnInit {
   // Generate billing report
   generatereport() {
     
+  }
+
+  // Go back function
+  goback() {
+    this.router.navigate(['menu']);
   }
 
   ngOnInit() {
