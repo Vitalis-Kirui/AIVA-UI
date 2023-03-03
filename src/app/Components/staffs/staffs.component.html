@@ -79,7 +79,7 @@
                     <!-- Rank or Role -->
                     <div class="my-3">
                         <p class="label">Role | Rank</p>
-                        <select class="custom-select" name="role" formControlName="role">
+                        <select class="custom-select" (change)="changerank($event)" name="role" formControlName="role">
                             <option *ngFor="let role of roles" [ngValue]="role">{{role}}</option>
                         </select>
                     </div>
@@ -87,7 +87,7 @@
                     <!-- Gender -->
                     <div class="my-3">
                         <p class="label">Gender</p>
-                        <select class="custom-select" name="gender" formControlName="gender">
+                        <select class="custom-select" (change)="changegender($event)" name="gender" formControlName="gender">
                             <option *ngFor="let gender of genders" [ngValue]="gender">{{gender}}</option>
                         </select>
                     </div>
@@ -95,7 +95,7 @@
                     <!-- Work station -->
                     <div class="my-3">
                         <p class="label">Work Station</p>
-                        <select class="custom-select" name="workstation" formControlName="workstation">
+                        <select class="custom-select" (change)="changestation($event)" name="workstation" formControlName="workstation">
                             <option *ngFor="let station of stations" [ngValue]="station">{{station}}</option>
                         </select>
                     </div>

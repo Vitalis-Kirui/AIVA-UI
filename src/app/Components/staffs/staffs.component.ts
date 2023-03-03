@@ -115,4 +115,27 @@ export class StaffsComponent implements OnInit {
     return this.newstaffform.get('workstation');
   }
 
+  // Tracking changes in the dropdowns
+
+  // Role
+  changerank(event: any) {
+    this.role?.setValue(event.target.value, {
+      onlySelf: true,
+    });
+  }
+
+  // Gender
+  changegender(event: any) {
+    this.gender?.setValue(event.target.value, {
+      onlySelf: true,
+    });
+  }
+
+  // Station
+  changestation(event: any) {
+    this.workstation?.setValue(event.target.value, {
+      onlySelf: true,
+    });
+  }
+
 }
