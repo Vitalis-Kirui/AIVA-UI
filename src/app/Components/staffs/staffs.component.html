@@ -135,15 +135,21 @@
                     <!-- Gender -->
                     <div class="my-3">
                         <p class="label">Gender</p>
-                        <select class="custom-select" (change)="changegender($event)" name="gender" formControlName="gender"
-                        [class.is-invalid]="gender?.invalid && gender?.dirty"
-                        >
-                            <option *ngFor="let gender of genders" [ngValue]="gender">{{gender}}</option>
-                        </select>
+                            <label>
+                                <input type="radio" formControlName="gender" value="male">
+                                Male
+                            </label>
+                        </div>
+                        <div>
+                            <label>
+                                <input type="radio" formControlName="gender" value="female">
+                                Female
+                            </label>
 
                         <!-- Error message -->
                         <small class="text-danger" *ngIf="gender?.invalid && gender?.dirty">Required</small>
                     </div>
+
 
                     <!-- Work station -->
                     <div class="my-3">
