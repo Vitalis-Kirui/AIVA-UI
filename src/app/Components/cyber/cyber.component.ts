@@ -25,6 +25,13 @@ export class CyberComponent implements OnInit {
       clientsname:['', [Validators.required, Validators.minLength(3)]]
     })
 
+    // Cyber form model
+    this.cyberform = this.fbservice.group({
+      name: ['', [Validators.required, Validators.minLength(3)]],
+      quantity: ['', [Validators.required]],
+      totalcost: ['', [Validators.required]]
+    });
+
   }
 
   // Getter functions
@@ -33,6 +40,23 @@ export class CyberComponent implements OnInit {
   get clientsname() {
     return this.clientsform.get('clientsname');
   }
+
+  // Cyber service name
+  get name() {
+    return this.cyberform.get('name');
+  }
+
+  // Quantity
+  get quantity() {
+    return this.cyberform.get('quantity');
+  }
+
+  // Total cost
+  get totalcost() {
+    return this.cyberform.get('totalcost');
+  }
+
+
 
   // Submit client's form function
   registerclient() {
