@@ -68,8 +68,12 @@ export class CyberComponent implements OnInit {
   }
 
   // Submiting cyber service
-  registercyber() {
+  registercyberservice() {
+
+    this.pastclientsname = true;
     console.log(this.cyberform.value)
+    
+    this.cyberform.reset();
   }
 
 }

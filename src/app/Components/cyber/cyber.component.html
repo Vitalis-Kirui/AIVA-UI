@@ -29,7 +29,7 @@
     </form>
 
     <!-- Registering cyber service -->
-    <form action="" [formGroup]="cyberform" (ngSubmit)="registercyber()">
+    <form action="" [formGroup]="cyberform" (ngSubmit)="registercyberservice()" *ngIf="pastclientsname">
 
         <!-- Name -->
         <div class="form-group">
