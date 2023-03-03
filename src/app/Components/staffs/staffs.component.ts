@@ -62,6 +62,8 @@ export class StaffsComponent implements OnInit {
     this.newstaffform = this.fbservice.group({
       firstname: ['', [Validators.required, Validators.minLength(3)]],
       secondname: ['', [Validators.required, Validators.minLength(3)]],
+      id: ['', [Validators.required]],
+      phonenumber: ['', [Validators.required]],
       age: ['', [Validators.required]],
       image: [''],
       role: ['', [Validators.required]],
