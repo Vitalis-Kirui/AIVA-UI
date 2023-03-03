@@ -8,6 +8,15 @@ import { Router } from '@angular/router';
 })
 export class StaffsComponent implements OnInit {
 
+  // Work stations
+  stations: any = ['All', 'Chebunyo', 'Kaboson']
+
+  // Gender
+  genders: any = ['Male', 'Female']
+
+  // Roles
+  roles: any = ['CEO', 'Management', 'Supervisor', 'Attendant']
+
   // Display variables
   seeexistingstaffs: boolean = false;
   addnewstaff: boolean = false;
