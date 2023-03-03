@@ -54,6 +54,10 @@ export class SalesComponent implements OnInit {
     this.salesform = this.fbservice.group({
       itemname: ['', [Validators.required]],
       quantity: ['', [Validators.required]],
+      mpesa: [''],
+      cash: [''],
+      cheque: [''],
+      code: ['']
     });
 
   }
@@ -73,6 +77,26 @@ export class SalesComponent implements OnInit {
   // Quantity
   get quantity() {
     return this.salesform.get('quantity');
+  }
+
+  // M-pesa
+  get mpesa() {
+    return this.salesform.get('mpesa');
+  }
+
+  // cash
+  get cash() {
+    return this.salesform.get('cash');
+  }
+
+  // cheque
+  get cheque() {
+    return this.salesform.get('cheque');
+  }
+
+  // Code 
+  get code() {
+    return this.salesform.get('code');
   }
 
 }
