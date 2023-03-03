@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { FormGroup } from '@angular/forms';
 
 @Component({
   selector: 'app-sales',
@@ -7,7 +8,27 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SalesComponent implements OnInit {
 
+  // Forms variables
+  clientdataform!: FormGroup;
+
+  salesform!: FormGroup;
+
+  // Display variables
+
+  billingready: boolean = false;
+  
   constructor() { }
+
+  // Submits functions
+  registerclient() {
+    this.billingready = true;
+    this.clientdataform.reset();
+  }
+
+  // Generate billing report
+  generatereport() {
+    
+  }
 
   ngOnInit(): void {
   }

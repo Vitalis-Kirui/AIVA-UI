@@ -4,12 +4,11 @@
 
         <h1>Sales Register</h1>
         <hr>
-        <p>Use the form below to record sales.</p>
 
     </div>
 
     <!-- Registering a client -->
-    <form action="" class="clientdata">
+    <form action="" class="clientdata" [formGroup]="clientdataform" *ngIf="!billingready">
 
         <!-- Client's name -->
         <div class="form-group">
@@ -18,12 +17,12 @@
         </div>
 
         <!-- Submit and Bill -->
-        <button class="btn btn-primary btn-rounded m-2">Start Billing</button>
+        <button class="btn btn-primary btn-rounded m-2" type="button" (click)="registerclient()">Start Billing</button>
 
     </form>
 
     <!-- Sales form -->
-    <form class="salesform" action="">
+    <form class="salesform" action="" [formGroup]="salesform" *ngIf="billingready">
 
         <!-- Product name -->
         <div class="form-group">
@@ -43,9 +42,9 @@
     </form>
 
     <!-- Billing items before generating a reciept -->
-    <div class="col-md-6 mx-auto my-5">
+    <div class="col-md-6 mx-auto my-5" *ngIf="billingready">
 
-        <div class="text-center"> 
+        <div class="text-center">
             <h2>Billing Recient</h2>
             <hr>
             <p>Items added will appear here.</p>
