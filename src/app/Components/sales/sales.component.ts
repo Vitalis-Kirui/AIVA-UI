@@ -26,6 +26,12 @@ export class SalesComponent implements OnInit {
     this.clientdataform.reset();
   }
 
+  // Add to billing report
+  additem() {
+    console.log(this.salesform.value);
+    this.salesform.reset();
+  }
+
   // Generate billing report
   generatereport() {
     

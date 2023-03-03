@@ -30,7 +30,7 @@
     </form>
 
     <!-- Sales form -->
-    <form class="salesform" [formGroup]="salesform" *ngIf="billingready">
+    <form class="salesform" [formGroup]="salesform" *ngIf="billingready" (ngSubmit)="additem()">
 
         <!-- Product name -->
         <div class="form-group">
