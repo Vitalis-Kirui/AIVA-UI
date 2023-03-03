@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormGroup } from '@angular/forms';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 
 @Component({
@@ -25,7 +25,7 @@ export class StaffsComponent implements OnInit {
   seeexistingstaffs: boolean = false;
   addnewstaff: boolean = false;
 
-  constructor(private router:Router) { }
+  constructor(private router:Router, private fbservice:FormBuilder) { }
 
   // Existing staff function
   existingstaffs() {
@@ -56,7 +56,21 @@ export class StaffsComponent implements OnInit {
     this.router.navigate(['menu']);
   }
 
-  ngOnInit(): void {
+  ngOnInit() {
+
+    // Form model
+    this.newstaffform = this.fbservice.group({
+      firstname: ['', [Validators.required, Validators.minLength(3)]],
+      secondname: ['', [Validators.required, Validators.minLength(3)]],
+      age: ['', [Validators.required]],
+      image: [''],
+      role: ['', [Validators.required]],
+      gender: ['', [Validators.required]],
+      workstation: ['', [Validators.required]]
+
+
+    })
+
   }
 
 }
