@@ -11,6 +11,8 @@ export class CyberComponent implements OnInit {
   // Forms variables
   clientsform!: FormGroup;
 
+  cyberform!: FormGroup;
+
   // Display variables
   pastclientsname: boolean = false;
 
@@ -39,6 +41,11 @@ export class CyberComponent implements OnInit {
 
     console.log(this.clientsform.value);
 
+  }
+
+  // Submiting cyber service
+  registercyber() {
+    console.log(this.cyberform.value)
   }
 
 }

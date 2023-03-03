@@ -7,7 +7,7 @@
     </div>
 
     <!-- Client's Form -->
-    <form action="" [formGroup]="clientsform" (ngSubmit)="registerclient()">
+    <form action="" [formGroup]="clientsform" (ngSubmit)="registerclient()" *ngIf="!pastclientsname">
 
         <!-- Name -->
         <div class="form-group">
@@ -24,7 +24,33 @@
         </div>
 
         <!-- Submit button  -->
-        <button class="btn btn-rounded btn-primary m-2" type="submit" [disabled]="clientsform.invalid">Start Billing</button>
+        <button class="btn btn-rounded btn-primary m-2" type="submit" [disabled]="clientsform.invalid">Submit</button>
+
+    </form>
+
+    <!-- Registering cyber service -->
+    <form action="" [formGroup]="cyberform" (ngSubmit)="registercyber()">
+
+        <!-- Name -->
+        <div class="form-group">
+            <label for="" class="my-3 mb-1">Service | Item Name</label>
+            <input type="text" class="form-control">
+        </div>
+
+        <!-- Quantity -->
+        <div class="form-group">
+            <label for="" class="my-3 mb-1">Quantity</label>
+            <input type="number" class="form-control">
+        </div>
+
+        <!-- Total cost -->
+        <div class="form-group">
+            <label for="" class="my-3 mb-1">Total Cost</label>
+            <input type="number" class="form-control">
+        </div>
+
+        <!-- Submit for billing -->
+        <button class="btn btn-primary btn-rounded m-2" type="submit">Add Bill</button>
 
     </form>
 
