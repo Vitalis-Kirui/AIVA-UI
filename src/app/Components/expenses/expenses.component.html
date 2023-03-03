@@ -7,29 +7,29 @@
     </div>
 
     <!-- Expense form -->
-    <form action="">
+    <form action="" [formGroup]="expenseform" (ngSubmit)="submitexpense()">
 
         <!-- Name -->
         <div class="form-group">
             <label for="" class="my-3 mb-1">Name</label>
-            <input type="text" class="form-control">
+            <input type="text" class="form-control" name="name" formControlName="name">
         </div>
 
         <!-- Description -->
         <div class="form-group">
             <label for="" class="my-3 mb-1">Description</label>
             <textarea name="description" id="" cols="30" rows="5" class="form-control"
-                formControlName="blog"></textarea>
+                formControlName="description"></textarea>
         </div>
 
         <!-- Total cost -->
         <div class="form-group">
             <label for="" class="my-3 mb-1">Total Cost</label>
-            <input type="number" class="form-control">
+            <input type="number" class="form-control" name="totalcost" formControlName="totalcost">
         </div>
 
         <!-- Submit button -->
-        <button class="btn btn-primary btn-rounded m-2" type="button" (click)="submitexpense()">Submit</button>
+        <button class="btn btn-primary btn-rounded m-2" type="submit">Submit</button>
 
     </form>
 

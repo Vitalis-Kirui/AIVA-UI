@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-expenses',
@@ -7,14 +9,37 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ExpensesComponent implements OnInit {
 
-  constructor() { }
+  // Form variables
+  expenseform!: FormGroup;
 
-  // Submit expense function
-  submitexpense() {
-    
+  constructor(private fbservice:FormBuilder, private router:Router) { }
+
+  ngOnInit() {
+
+    // Expense form model
+    this.expenseform = this.fbservice.group({
+      name: ['', Validators.required],
+      description: ['', Validators.required],
+      totalcost: ['', Validators.required]
+    })
   }
 
-  ngOnInit(): void {
+  // Getter functions
+  get name() {
+    return this.expenseform.get('name');
+  }
+
+  get description() {
+    return this.expenseform.get('description');
+  }
+
+  get totalcost() {
+    return this.expenseform.get('totalcost');
+  }
+
+   // Submit expense function
+  submitexpense() {
+    console.log(this.expenseform.value);
   }
 
 }
