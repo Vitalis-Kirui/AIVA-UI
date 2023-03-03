@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-cyber',
@@ -16,7 +17,7 @@ export class CyberComponent implements OnInit {
   // Display variables
   pastclientsname: boolean = false;
 
-  constructor(private fbservice : FormBuilder) { }
+  constructor(private fbservice : FormBuilder, private router:Router) { }
 
   ngOnInit() {
 
@@ -74,6 +75,11 @@ export class CyberComponent implements OnInit {
     console.log(this.cyberform.value)
     
     this.cyberform.reset();
+  }
+
+  // Go back function
+  goback() {
+    this.router.navigate(['menu']);
   }
 
 }
