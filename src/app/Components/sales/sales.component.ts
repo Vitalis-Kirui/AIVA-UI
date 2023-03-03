@@ -38,6 +38,12 @@ export class SalesComponent implements OnInit {
       clientname: ['', [Validators.required, Validators.minLength(3)]]
     })
 
+    // Sales form model
+    this.salesform = this.fbservice.group({
+      itemname: ['', [Validators.required]],
+      quantity: ['', [Validators.required]],
+    });
+
   }
 
   // GETTER FUNCTIONS
@@ -45,6 +51,16 @@ export class SalesComponent implements OnInit {
   // clientsname
   get clientname() {
     return this.clientdataform.get('clientname');
+  }
+
+  // Items name
+  get itemname() {
+    return this.salesform.get('itemname');
+  }
+
+  // Quantity
+  get quantity() {
+    return this.salesform.get('quantity');
   }
 
 }

@@ -14,8 +14,7 @@
         <div class="form-group">
             <label for="" class="mb-1 my-2">Client's Name</label>
             <input type="text" class="form-control" name="clientname" formControlName="clientname"
-            [class.is-invalid]="clientname?.invalid && clientname?.dirty"
-            >
+                [class.is-invalid]="clientname?.invalid && clientname?.dirty">
 
             <!-- Error messages -->
             <div class="text-danger" *ngIf="clientname?.invalid && clientname?.dirty">
@@ -25,27 +24,39 @@
         </div>
 
         <!-- Submit and Bill -->
-        <button class="btn btn-primary btn-rounded m-2" type="button" (click)="registerclient()">Start Billing</button>
+        <button class="btn btn-primary btn-rounded m-2" type="button" (click)="registerclient()"
+            [disabled]="clientdataform.invalid">Start Billing</button>
 
     </form>
 
     <!-- Sales form -->
-    <form class="salesform" action="" [formGroup]="salesform" *ngIf="billingready">
+    <form class="salesform" [formGroup]="salesform" *ngIf="billingready">
 
         <!-- Product name -->
         <div class="form-group">
             <label for="" class="mb-1 my-2">Product | Item Name</label>
-            <input type="text" class="form-control">
+            <input type="text" class="form-control" name="itemname" formControlName="itemname"
+            [class.is-invalid]="itemname?.invalid && itemname?.dirty"
+            >
+
+            <!-- Error message -->
+            <small class="text-danger" *ngIf="itemname?.invalid && itemname?.dirty">Required</small>
         </div>
 
         <!-- Quantity -->
         <div class="form-group">
             <label for="" class="mb-1 my-3">Quantity</label>
-            <input type="number" class="form-control">
+            <input type="number" class="form-control" name="quantity" formControlName="quantity"
+            [class.is-invalid]="quantity?.invalid && quantity?.dirty"
+            >
+
+            <!-- Error message -->
+            <small class="text-danger" *ngIf="quantity?.invalid && quantity?.dirty">Required</small>
+
         </div>
 
         <!-- Submit item button -->
-        <button class="btn btn-rounded btn-primary m-2" type="submit">Add Item</button>
+        <button class="btn btn-rounded btn-primary m-2" type="submit" [disabled]="salesform.invalid">Add Item</button>
 
     </form>
 
