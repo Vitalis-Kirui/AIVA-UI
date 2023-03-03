@@ -55,8 +55,34 @@
 
         </div>
 
+        <!-- Mode of payment -->
+        <!-- Mpesa -->
+        <div class="form-group mb-1 mt-3">
+            <label for="" class="my-3 mb-2">Mode of Payment</label> <br>
+            <input type="checkbox" class="form-check-input" name="mpesa" formControlName="mpesa">
+            <label for="" class="form-check-label">M-Pesa | Till Number</label>
+        </div>
+
+        <!-- Cash -->
+        <div class="form-group mb-1 mt-3">
+            <input type="checkbox" class="form-check-input" name="cash" formControlName="cash">
+            <label for="" class="form-check-label">Cash</label>
+        </div>
+
+        <!-- Cheque -->
+        <div class="form-group mb-1 mt-3">
+            <input type="checkbox" class="form-check-input" name="cheque" formControlName="cheque">
+            <label for="" class="form-check-label">Cheque</label>
+        </div>
+
+        <!-- Transaction code -->
+        <div class="form-group">
+            <label for="" class="mb-1 my-3">Transaction Code</label>
+            <input type="text" class="form-control" name="code" formControlName="code">
+        </div>
+
         <!-- Submit item button -->
-        <button class="btn btn-rounded btn-primary m-2" type="submit" [disabled]="salesform.invalid">Add Item</button>
+        <button class="btn btn-rounded btn-primary m-3" type="submit" [disabled]="salesform.invalid">Add Item</button>
 
     </form>
 
