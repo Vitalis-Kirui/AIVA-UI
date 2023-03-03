@@ -75,6 +75,22 @@ export class SalesComponent implements OnInit {
       }
       code?.updateValueAndValidity();
      }) 
+    
+    // Cheque conditional validation
+    this.salesform.get('cheque')?.valueChanges
+     .subscribe((checkedvalue) =>{
+
+      // getting code field
+      const code = this.code;
+
+      if(checkedvalue){
+        code?.setValidators([Validators.required]);
+      }
+      else{
+        code?.clearValidators()
+      }
+      code?.updateValueAndValidity();
+     }) 
 
   }
 
