@@ -12,7 +12,23 @@ export class AddingComponent implements OnInit {
   // Adding form variable
   stockadditionform!: FormGroup;
 
-  constructor(private fbservice:FormBuilder, private router : Router) { }
+  // Display variables
+  addingstock: boolean = false;
+  seeingstock: boolean = false;
+
+  constructor(private fbservice: FormBuilder, private router: Router) { }
+  
+  // Add stock display function
+  addstock() {
+    this.addingstock = true;    
+    this.seeingstock = false;
+  }
+
+  // See stock display function
+  seestock() {
+    this.seeingstock = true;
+    this.addingstock = false;
+  }
 
   ngOnInit() {
 

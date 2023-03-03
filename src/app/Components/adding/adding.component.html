@@ -1,15 +1,21 @@
 <div class="container">
 
-    <!-- Introduction -->
-    <div class="text-center pt-5">
-        <h1>Registering New Stock Addition</h1>
-        <hr>
-        <p>The form below is for adding new stock to the system</p>
-
+    <!-- What to display buttons -->
+    <div class="text-center pt-3">
+        <button class="btn btn-primary btn-rounded m-2" type="button" (click)="addstock()">Add Stock</button>
+        <button class="btn btn-primary btn-rounded m-2" type="button" (click)="seestock()">See Stock</button>
     </div>
-
+    
     <!-- Addition form -->
-    <div class="form">
+    <div class="form" *ngIf="addingstock">
+
+        <!-- Introduction -->
+        <div class="text-center pt-5">
+            <h2>Registering New Stock</h2>
+            <hr>
+            <p>The form below is for adding new stock to the system</p>
+        
+        </div>
 
         <form action="" [formGroup]="stockadditionform" (ngSubmit)="additem()">
 
@@ -72,12 +78,24 @@
 
         </form>
 
-        <hr>
-
-        <!-- Go back to menu button -->
-        <button class="btn btn-secondary btn-rounded m-3" type="button" (click)="goback()">Go Back</button>
 
     </div>
+
+    <!-- Avaible stock display -->
+    <div class="col-md-8 mx-auto pt-3" *ngIf="seeingstock">
+    
+        <div class="text-center">
+            <h2>Available stock</h2>
+            <hr>
+            <p>Available stock will appear here</p>
+        </div>
+    
+    </div>
+    
+    <hr>
+    
+    <!-- Go back to menu button -->
+    <button class="btn btn-secondary btn-rounded m-3" type="button" (click)="goback()">Go Back</button>
 
 
 </div>

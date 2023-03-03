@@ -20,8 +20,8 @@ export class MenuComponent implements OnInit {
     this.router.navigate(['cyber']);
   }
 
-  // Adding stock
-  addstock() {
+  //  stock
+  stock() {
     this.router.navigate(['adding']);
   }
 
