@@ -69,10 +69,50 @@ export class StaffsComponent implements OnInit {
       role: ['', [Validators.required]],
       gender: ['', [Validators.required]],
       workstation: ['', [Validators.required]]
-
-
     })
 
+  }
+
+  // GETTER FUNCTIONS
+
+  // Firstname
+  get firstname() {
+    return this.newstaffform.get('firstname');
+  }
+
+  // Second name
+  get secondname() {
+    return this.newstaffform.get('secondname');
+  }
+
+  // id
+  get id() {
+    return this.newstaffform.get('id');
+  }
+
+  // Phone number
+  get phonenumber() {
+    return this.newstaffform.get('phonenumber');
+  }
+
+  // age
+  get age() {
+    return this.newstaffform.get('age');
+  }
+
+  // role
+  get role() {
+    return this.newstaffform.get('role');
+  }
+
+  // gender
+  get gender() {
+    return this.newstaffform.get('gender');
+  }
+
+  // Workstation
+  get workstation() {
+    return this.newstaffform.get('workstation');
   }
 
 }
