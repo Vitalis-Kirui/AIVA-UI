@@ -43,4 +43,9 @@ export class ExpensesComponent implements OnInit {
     this.expenseform.reset();
   }
 
+  // Go back function
+  goback() {
+    this.router.navigate(['menu']);
+  }
+
 }
