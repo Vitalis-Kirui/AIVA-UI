@@ -36,8 +36,7 @@
         <div class="form-group">
             <label for="" class="mb-1 my-2">Product | Item Name</label>
             <input type="text" class="form-control" name="itemname" formControlName="itemname"
-            [class.is-invalid]="itemname?.invalid && itemname?.dirty"
-            >
+                [class.is-invalid]="itemname?.invalid && itemname?.dirty">
 
             <!-- Error message -->
             <small class="text-danger" *ngIf="itemname?.invalid && itemname?.dirty">Required</small>
@@ -47,8 +46,7 @@
         <div class="form-group">
             <label for="" class="mb-1 my-3">Quantity</label>
             <input type="number" class="form-control" name="quantity" formControlName="quantity"
-            [class.is-invalid]="quantity?.invalid && quantity?.dirty"
-            >
+                [class.is-invalid]="quantity?.invalid && quantity?.dirty">
 
             <!-- Error message -->
             <small class="text-danger" *ngIf="quantity?.invalid && quantity?.dirty">Required</small>
@@ -79,8 +77,7 @@
         <div class="form-group">
             <label for="" class="mb-1 my-3">Transaction Code</label>
             <input type="text" class="form-control" name="code" formControlName="code"
-            [class.is-invalid]="code?.invalid && code?.dirty"
-            >
+                [class.is-invalid]="code?.invalid && code?.dirty">
 
             <!-- Error message -->
             <small class="text-danger" *ngIf="code?.invalid">Required for M-pesa | Cheque transactions</small>
