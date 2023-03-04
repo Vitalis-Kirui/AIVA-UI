@@ -59,6 +59,36 @@
             <small class="text-danger" *ngIf="totalcost?.invalid && totalcost?.dirty">Required</small>
         </div>
 
+        <!-- Mode of payment -->
+        <!-- Mpesa -->
+        <div class="form-group mb-1 mt-3">
+            <label for="" class="my-3 mb-2">Mode of Payment</label> <br>
+            <input type="checkbox" class="form-check-input" name="mpesa" formControlName="mpesa">
+            <label for="" class="form-check-label">M-Pesa | Till Number</label>
+        </div>
+        
+        <!-- Cash -->
+        <div class="form-group mb-1 mt-3">
+            <input type="checkbox" class="form-check-input" name="cash" formControlName="cash">
+            <label for="" class="form-check-label">Cash</label>
+        </div>
+        
+        <!-- Cheque -->
+        <div class="form-group mb-1 mt-3">
+            <input type="checkbox" class="form-check-input" name="cheque" formControlName="cheque">
+            <label for="" class="form-check-label">Cheque</label>
+        </div>
+        
+        <!-- Transaction code -->
+        <div class="form-group">
+            <label for="" class="mb-1 my-3">Transaction Code</label>
+            <input type="text" class="form-control" name="code" formControlName="code"
+                [class.is-invalid]="code?.invalid && code?.dirty">
+        
+            <!-- Error message -->
+            <small class="text-danger" *ngIf="code?.invalid">Required for M-pesa | Cheque transactions</small>
+        </div>
+
         <!-- Submit for billing -->
         <button class="btn btn-primary btn-rounded m-2" type="submit" [disabled]="cyberform.invalid">Add Bill</button>
 
