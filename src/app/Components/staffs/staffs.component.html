@@ -167,7 +167,12 @@
                     <!-- Salary -->
                     <div class="form-group">
                         <label for="" class="mb-1 my-3">Monthly Salary</label>
-                        <input type="number" class="form-control" name="salary" formControlName="salary">
+                        <input type="number" class="form-control" name="salary" formControlName="salary"
+                        [class.is-invalid]="salary?.invalid && salary?.dirty"
+                        >
+
+                        <!-- Error message -->
+                        <small class="text-danger" *ngIf="salary?.invalid && salary?.dirty">Required</small>
                     </div>
 
                     <!-- Submit button -->
