@@ -68,7 +68,8 @@ export class StaffsComponent implements OnInit {
       image: [''],
       role: ['', [Validators.required]],
       gender: ['', [Validators.required]],
-      workstation: ['', [Validators.required]]
+      workstation: ['', [Validators.required]],
+      salary: ['', [Validators.required]]
     })
 
   }
@@ -113,6 +114,11 @@ export class StaffsComponent implements OnInit {
   // Workstation
   get workstation() {
     return this.newstaffform.get('workstation');
+  }
+
+  // Salary
+  get salary() {
+    return this.newstaffform.get('salary');
   }
 
   // Tracking changes in the dropdowns

@@ -164,6 +164,12 @@
                         <small class="text-danger" *ngIf="workstation?.invalid && workstation?.dirty">Required</small>
                     </div>
 
+                    <!-- Salary -->
+                    <div class="form-group">
+                        <label for="" class="mb-1 my-3">Monthly Salary</label>
+                        <input type="number" class="form-control" name="salary" formControlName="salary">
+                    </div>
+
                     <!-- Submit button -->
                     <button class="btn btn-primary btn-rounded m-3" type="submit" [disabled]="newstaffform.invalid">Submit</button>
 
