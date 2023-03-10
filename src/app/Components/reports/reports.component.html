@@ -21,7 +21,7 @@
             <p>Sales will appear here</p>
 
             <!-- Full report button -->
-            <button class="btn btn-info m-2 btn-rounded" type="button">Full Report</button>
+            <button class="btn btn-info m-2 btn-rounded" type="button" (click)="salesfullreport()">Full Report</button>
         
         </div>
         
@@ -37,7 +37,7 @@
             <p>Cyber services will appear here</p>
 
             <!-- Full report button -->
-            <button class="btn btn-info m-2 btn-rounded" type="button">Full Report</button>
+            <button class="btn btn-info m-2 btn-rounded" type="button" (click)="cyberfullreport()">Full Report</button>
         
         </div>
         
@@ -53,10 +53,14 @@
             <p>Expenses will appear here</p>
 
             <!-- Full report button -->
-            <button class="btn btn-info m-2 btn-rounded" type="button">Full Report</button>
+            <button class="btn btn-info m-2 btn-rounded" type="button" (click)="expensesfullreport()">Full Report</button>
         
         </div>
 
     </div>
+
+    <!-- Go back function -->
+    <hr>
+    <button class="btn btn-secondary m-2 btn-rounded" type="button" (click)="goback()">Go Back</button>
 
 </div>
