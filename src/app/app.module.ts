@@ -14,6 +14,9 @@ import { VerificationComponent } from './Components/verification/verification.co
 import { Error404Component } from './Components/error404/error404.component';
 import { MenuComponent } from './Components/menu/menu.component';
 import { ReactiveFormsModule } from '@angular/forms';
+import { CyberFullComponent } from './Components/cyber-full/cyber-full.component';
+import { ExpensesFullComponent } from './Components/expenses-full/expenses-full.component';
+import { SalesFullComponent } from './Components/sales-full/sales-full.component';
 
 @NgModule({
   declarations: [
@@ -27,7 +30,10 @@ import { ReactiveFormsModule } from '@angular/forms';
     ReportsComponent,
     VerificationComponent,
     Error404Component,
-    MenuComponent
+    MenuComponent,
+    CyberFullComponent,
+    ExpensesFullComponent,
+    SalesFullComponent
   ],
   imports: [
     BrowserModule,
