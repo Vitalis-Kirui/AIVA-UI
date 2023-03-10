@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-cyber-full',
@@ -7,7 +8,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CyberFullComponent implements OnInit {
 
-  constructor() { }
+  constructor(private router: Router) { }
+  
+  // Back to reports function
+  backtoreports() {
+    this.router.navigate(['reports']);
+  }
 
   ngOnInit(): void {
   }
