@@ -12,12 +12,13 @@
         <div class="cyberservices mt-2">
         
             <ul *ngFor="let service of cyberservices">
-                <li class="text-primary bold">{{service.clientsname | uppercase}}</li>
-                <p>{{service.servicename}}</p>
-                <p>{{service.payment}}: <span class="transactioncode">{{service.transactioncode}}</span></p>
-                <p>{{service.quantity}}</p>
-                <P>{{service.totalcost}}</P>
-                <p>{{service.createdAt | date | uppercase}}</p>
+                <li class="text-bg-secondary p-2">{{service.clientsname | uppercase}}</li>
+                <p><span class="text-primary">Service name: </span>{{service.servicename}}</p>
+                <p><span class="text-primary">Payment method: </span>{{service.payment}}</p>
+                <p><span class="text-primary">Transaction code: </span>{{service.transactioncode}}</p>
+                <p><span class="text-primary">Quantity: </span>{{service.quantity}}</p>
+                <P><span class="text-primary">Total cost: </span>{{service.totalcost}}</P>
+                <p><span class="text-primary">Date: </span>{{service.createdAt | date | uppercase}}</p>
             </ul>
         
         </div>
