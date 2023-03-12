@@ -12,10 +12,11 @@
         <div class="sales mt-2">
         
             <ul *ngFor="let sale of sales">
-                <li class="text-primary bold">{{sale.clientsname | uppercase}}</li>
-                <p>{{sale.productname}}</p>
-                <p>{{sale.payment}}: <span class="transactioncode">{{sale.transactioncode}}</span></p>
-                <p>{{sale.createdAt | date}}</p>
+                <li class="text-bg-secondary p-2">{{sale.clientsname | uppercase}}</li>
+                <p><span class="text-primary">Product's name: </span>{{sale.productname}}</p>
+                <p><span class="text-primary">Payment method: </span>{{sale.payment}}</p>
+                <p><span class="text-primary">Transaction code: </span>{{sale.transactioncode}}</p>
+                <p><span class="text-primary">Date: </span>{{sale.createdAt | date}}</p>
             </ul>
         
         </div>
