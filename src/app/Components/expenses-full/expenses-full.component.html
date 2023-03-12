@@ -12,10 +12,10 @@
         <div class="expenses mt-2">
         
             <ul *ngFor="let expense of expenses">
-                <li class="text-primary bold">{{expense.name | uppercase}}</li>
-                <p>{{expense.description}}</p>
-                <p>{{expense.totalcost}} </p>
-                <p>{{expense.createdAt | date | uppercase}}</p>
+                <li class="text-bg-secondary p-2">{{expense.name | uppercase}}</li>
+                <p><span class="text-primary">Description: </span>{{expense.description}}</p>
+                <p><span class="text-primary">Total cost: </span>{{expense.totalcost}} </p>
+                <p><span class="text-primary">Date: </span>{{expense.createdAt | date | uppercase}}</p>
             </ul>
         
         </div>
