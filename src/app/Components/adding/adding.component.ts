@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
+import { StockService } from 'src/app/Services/stock.service';
 
 @Component({
   selector: 'app-adding',
@@ -16,7 +17,7 @@ export class AddingComponent implements OnInit {
   addingstock: boolean = false;
   seeingstock: boolean = false;
 
-  constructor(private fbservice: FormBuilder, private router: Router) { }
+  constructor(private fbservice: FormBuilder, private router: Router, private stockservice:StockService) { }
   
   // Add stock display function
   addstock() {
@@ -69,6 +70,16 @@ export class AddingComponent implements OnInit {
   additem() {
 
     console.log(this.stockadditionform.value)
+
+    // Posting new stock database
+    this.stockservice.addnewstock(this.stockadditionform.value)
+      .subscribe(data => {
+          console.log(data)
+      },
+        error => {
+          console.log(error);
+      })
+
     this.stockadditionform.reset();
 
   }
