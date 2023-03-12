@@ -68,7 +68,15 @@
                 <p>These are today's expenses</p>
             </div>
         
-            <p>Expenses will appear here</p>
+            <div class="expenses mt-2">
+            
+                <ul *ngFor="let expense of expenses">
+                    <li class="text-primary bold">{{expense.name | uppercase}}</li>
+                    <p>{{expense.description}}</p>
+                    <p>{{expense.totalcost}} </p>
+                </ul>
+            
+            </div>
 
             <!-- Full report button -->
             <button class="btn btn-info m-2 btn-rounded" type="button" (click)="expensesfullreport()">Full Report</button>
