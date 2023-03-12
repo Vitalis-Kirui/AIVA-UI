@@ -49,6 +49,16 @@ export class StaffsComponent implements OnInit {
 
   // Submit staff function
   submitstaff() {
+
+    // Posting new staff to database
+    this.staffservice.registernewstaff(this.newstaffform.value)
+      .subscribe(success => {
+        console.log(success)          
+      },
+        error => {
+          console.log(error);
+      })
+
     this.newstaffform.reset();
     
   }
