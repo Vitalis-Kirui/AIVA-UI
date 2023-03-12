@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { CyberService } from 'src/app/Services/cyber.service';
 
 @Component({
   selector: 'app-cyber-full',
@@ -8,14 +9,29 @@ import { Router } from '@angular/router';
 })
 export class CyberFullComponent implements OnInit {
 
-  constructor(private router: Router) { }
+  // Cyber services array
+  cyberservices: any = [];
+
+  constructor(private router: Router, private cyberservice : CyberService) { }
   
   // Back to reports function
   backtoreports() {
     this.router.navigate(['reports']);
   }
 
-  ngOnInit(): void {
+  ngOnInit() {
+
+    // all cyber services
+    this.cyberservice.getallcyberservices()
+      .subscribe(data => {
+        this.cyberservices = data.cyberservices;
+        console.log(this.cyberservices);
+      },
+        error => {
+          console.log(error);
+        }
+      )
+
   }
 
 }
