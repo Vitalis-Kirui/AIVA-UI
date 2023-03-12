@@ -18,10 +18,28 @@
         <!-- Existing staff details -->
         <div class="col-md-6 existingdetails mx-auto" *ngIf="seeexistingstaffs">
 
-            <div class="text-center">
-                <h2>Your Staffs</h2>
+            <div >
+                <h2 class="text-center">Your Staffs</h2>
                 <hr>
-                <p>These are information of your existing staff.</p>
+                
+                <div class="allstaffs" *ngFor="let staff of allstaffs">
+
+                    <div class="text-start">
+                        <h1>{{staff.firstname}} {{staff.secondname}}</h1>
+                    </div>
+
+                    <ul>
+                        <li><span class="text-primary">National ID: </span>{{staff.nationalid}}</li>
+                        <li><span class="text-primary">Phone number: </span>{{staff.phonenumber}}</li>
+                        <li><span class="text-primary">Age: </span>{{staff.age}}</li>
+                        <li><span class="text-primary">Role | Rank: </span>{{staff.role}}</li>
+                        <li><span class="text-primary">Workstation: </span>{{staff.workstation}}</li>
+                        <li><span class="text-primary">Monthly Salary: </span>{{staff.monthlysalary}}</li>
+                        <li><span class="text-primary">Gender: </span>{{staff.gender}}</li>
+                        <li><span class="text-primary">Date Registered: </span>{{staff.createdAt | date | uppercase}}</li>
+                    </ul>
+
+                </div>
             </div>
 
         </div>
