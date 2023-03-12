@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
+import { ExpenseService } from 'src/app/Services/expense.service';
 
 @Component({
   selector: 'app-expenses',
@@ -12,7 +13,7 @@ export class ExpensesComponent implements OnInit {
   // Form variables
   expenseform!: FormGroup;
 
-  constructor(private fbservice:FormBuilder, private router:Router) { }
+  constructor(private fbservice:FormBuilder, private router:Router, private expenseservice: ExpenseService) { }
 
   ngOnInit() {
 
@@ -40,7 +41,17 @@ export class ExpensesComponent implements OnInit {
    // Submit expense function
   submitexpense() {
     console.log(this.expenseform.value);
-    this.expenseform.reset();
+
+    // Posting an expense to database
+    this.expenseservice.registernewexpense(this.expenseform.value)
+      .subscribe(success => {
+        console.log(success);
+    this.expenseform.reset();       
+      },
+        error => {
+        console.log(error);
+      })
+
   }
 
   // Go back function
