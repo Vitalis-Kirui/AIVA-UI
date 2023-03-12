@@ -65,6 +65,17 @@ export class ReportsComponent implements OnInit {
         error => {
           console.log(error);
         }
+    )
+    
+    // Today's expenses
+    this.expenseservice.gettodayexpenses()
+      .subscribe(data => {
+        this.expenses = data.expenses;
+        console.log(this.expenses);
+      },
+        error => {
+          console.log(error);
+        }
       )
 
   }
