@@ -18,7 +18,15 @@
                 <p>These are today's sales</p>
             </div>
         
-            <p>Sales will appear here</p>
+            <div class="sales mt-2">
+
+                <ul *ngFor="let sale of sales">
+                    <li class="text-primary bold">{{sale.clientsname | uppercase}}</li>
+                    <p>{{sale.productname}}</p>
+                    <p>{{sale.payment}}: <span class="transactioncode">{{sale.transactioncode}}</span></p>
+                </ul>
+
+            </div>
 
             <!-- Full report button -->
             <button class="btn btn-info m-2 btn-rounded" type="button" (click)="salesfullreport()">Full Report</button>
