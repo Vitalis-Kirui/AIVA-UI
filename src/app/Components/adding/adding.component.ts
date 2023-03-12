@@ -38,7 +38,7 @@ export class AddingComponent implements OnInit {
 
     // Form model
     this.stockadditionform = this.fbservice.group({
-      name: ['', [Validators.required]],
+      productname: ['', [Validators.required]],
       description:[''],
       quantity: [1, [Validators.required]],
       buyingprice: [1, [Validators.required]],
@@ -61,7 +61,7 @@ export class AddingComponent implements OnInit {
 
   // Name
   get name() {
-    return this.stockadditionform.get('name');
+    return this.stockadditionform.get('productname');
   }
 
   // Quantity
@@ -87,13 +87,15 @@ export class AddingComponent implements OnInit {
     // Posting new stock database
     this.stockservice.addnewstock(this.stockadditionform.value)
       .subscribe(data => {
-          console.log(data)
+        console.log(data);
+        this.stockadditionform.reset();
+    window.location.reload();
       },
         error => {
           console.log(error);
       })
 
-    this.stockadditionform.reset();
+    
 
   }
 
