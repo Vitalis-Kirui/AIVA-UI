@@ -22,8 +22,10 @@
 
                 <ul *ngFor="let sale of sales">
                     <li class="text-primary bold">{{sale.clientsname | uppercase}}</li>
-                    <p>{{sale.productname}}</p>
-                    <p>{{sale.payment}}: <span class="transactioncode">{{sale.transactioncode}}</span></p>
+                    <p><span class="text-primary">Product's name: </span>{{sale.productname}}</p>
+                    <p><span class="text-primary">Quantity: </span>{{sale.quantity}}</p>
+                    <p><span class="text-primary">Payment method: </span>{{sale.payment}}</p>
+                    <p><span class="text-primary">Transaction code:</span> {{sale.transactioncode}}</p>
                 </ul>
 
             </div>
