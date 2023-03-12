@@ -42,7 +42,17 @@
                 <p>These are today's registered cyber services</p>
             </div>
         
-            <p>Cyber services will appear here</p>
+            <div class="cyberservices mt-2">
+            
+                <ul *ngFor="let service of cyberservices">
+                    <li class="text-primary bold">{{service.clientsname | uppercase}}</li>
+                    <p>{{service.servicename}}</p>
+                    <p>{{service.payment}}: <span class="transactioncode">{{service.transactioncode}}</span></p>
+                    <p>{{service.quantity}}</p>
+                    <P>{{service.totalcost}}</P>
+                </ul>
+            
+            </div>
 
             <!-- Full report button -->
             <button class="btn btn-info m-2 btn-rounded" type="button" (click)="cyberfullreport()">Full Report</button>
