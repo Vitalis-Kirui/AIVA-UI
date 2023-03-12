@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
+import { StaffService } from 'src/app/Services/staff.service';
 
 @Component({
   selector: 'app-staffs',
@@ -25,7 +26,7 @@ export class StaffsComponent implements OnInit {
   seeexistingstaffs: boolean = false;
   addnewstaff: boolean = false;
 
-  constructor(private router:Router, private fbservice:FormBuilder) { }
+  constructor(private router:Router, private fbservice:FormBuilder, private staffservice : StaffService) { }
 
   // Existing staff function
   existingstaffs() {
@@ -34,6 +35,9 @@ export class StaffsComponent implements OnInit {
     this.addnewstaff = false;
 
   }
+
+  // Staffs array
+  allstaffs: any = [];
 
   // Add new staff function
   addstaff() {
@@ -71,6 +75,16 @@ export class StaffsComponent implements OnInit {
       workstation: ['', [Validators.required]],
       salary: ['', [Validators.required]]
     })
+
+    // Fetching all the staffs
+    this.staffservice.getallstaffs()
+      .subscribe(data => {
+        this.allstaffs = data.staffs;
+        console.log(this.allstaffs);          
+      },
+        error => {
+        console.log(error);
+      })
 
   }
 
