@@ -13,6 +13,9 @@ export class AddingComponent implements OnInit {
   // Adding form variable
   stockadditionform!: FormGroup;
 
+  // Stock array
+  allstocks: any = [];
+
   // Display variables
   addingstock: boolean = false;
   seeingstock: boolean = false;
@@ -41,6 +44,16 @@ export class AddingComponent implements OnInit {
       buyingprice: [1, [Validators.required]],
       sellingprice: [1, [Validators.required]]
     })
+
+    // Fetching existing stock
+    this.stockservice.getallstock()
+      .subscribe(data => {
+        this.allstocks = data.stocks;
+        console.log(this.allstocks);
+      },
+        error => {
+        console.log(error);
+      })
 
   }
 
