@@ -15,7 +15,7 @@ export class ReportsComponent implements OnInit {
   cyberservices: any = [];
   
   // Sales array
-  saleservices: any = [];
+  sales: any = [];
 
   // expenses array
   expenses: any = [];
@@ -50,6 +50,17 @@ export class ReportsComponent implements OnInit {
       .subscribe(data => { 
         this.cyberservices = data.cyberservices;
         console.log(this.cyberservices);
+      },
+        error => {
+          console.log(error);
+        }
+    )
+    
+    // Today sales
+    this.salesservice.gettodaysales()
+      .subscribe(data => {
+        this.sales = data.sales;
+        console.log(this.sales);
       },
         error => {
           console.log(error);
