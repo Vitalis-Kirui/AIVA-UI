@@ -54,12 +54,13 @@ export class StaffsComponent implements OnInit {
     this.staffservice.registernewstaff(this.newstaffform.value)
       .subscribe(success => {
         console.log(success)          
+    this.newstaffform.reset();
+window.location.reload();
       },
         error => {
           console.log(error);
       })
 
-    this.newstaffform.reset();
     
   }
 
@@ -74,14 +75,14 @@ export class StaffsComponent implements OnInit {
     this.newstaffform = this.fbservice.group({
       firstname: ['', [Validators.required, Validators.minLength(3)]],
       secondname: ['', [Validators.required, Validators.minLength(3)]],
-      id: ['', [Validators.required, Validators.minLength(6)]],
+      nationalid: ['', [Validators.required, Validators.minLength(6)]],
       phonenumber: ['', [Validators.required, Validators.minLength(9)]],
       age: ['', [Validators.required]],
       image: [''],
       role: ['', [Validators.required]],
       gender: ['', [Validators.required]],
       workstation: ['', [Validators.required]],
-      salary: ['', [Validators.required]]
+      monthlysalary: ['', [Validators.required]]
     })
 
     // Fetching all the staffs
@@ -110,7 +111,7 @@ export class StaffsComponent implements OnInit {
 
   // id
   get id() {
-    return this.newstaffform.get('id');
+    return this.newstaffform.get('nationalid');
   }
 
   // Phone number
@@ -140,7 +141,7 @@ export class StaffsComponent implements OnInit {
 
   // Salary
   get salary() {
-    return this.newstaffform.get('salary');
+    return this.newstaffform.get('monthlysalary');
   }
 
   // Tracking changes in the dropdowns
