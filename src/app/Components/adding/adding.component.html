@@ -87,7 +87,19 @@
         <div class="text-center">
             <h2>Available stock</h2>
             <hr>
-            <p>Available stock will appear here</p>
+        </div>
+
+        <!-- Existing stock -->
+        <div class="allstocks" *ngFor="let stock of allstocks">
+            <ul>
+                <li><span class="text-primary">Name: </span>{{stock.productname}}</li>
+                <li><span class="text-primary">Quantity: </span>{{stock.quantity}}</li>
+                <li><span class="text-primary">Description: </span>{{stock.description}}</li>
+                <li><span class="text-primary">Buying price: </span>{{stock.buyingprice}}</li>
+                <li><span class="text-primary">Selling price: </span>{{stock.sellingprice}}</li>
+
+            </ul>
+
         </div>
     
     </div>
