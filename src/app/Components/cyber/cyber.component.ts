@@ -20,13 +20,13 @@ export class CyberComponent implements OnInit {
     // Cyber form model
     this.cyberform = this.fbservice.group({
       clientsname:['', [Validators.required, Validators.minLength(3)]],
-      name: ['', [Validators.required]],
+      servicename: ['', [Validators.required]],
       quantity: [''],
       totalcost: ['', [Validators.required]],
       mpesa: [''],
       cash: [''],
       cheque: [''],
-      code: ['']
+      transactioncode: ['']
     });
 
      // M-Pesa conditional validation
@@ -72,7 +72,7 @@ export class CyberComponent implements OnInit {
 
   // Cyber service name
   get name() {
-    return this.cyberform.get('name');
+    return this.cyberform.get('servicename');
   }
 
   // Quantity
@@ -102,7 +102,7 @@ export class CyberComponent implements OnInit {
 
   // Code 
   get code() {
-    return this.cyberform.get('code');
+    return this.cyberform.get('transactioncode');
   }
 
   // Submiting cyber service
