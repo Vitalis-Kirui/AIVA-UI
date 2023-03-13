@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
+import { CyberService } from 'src/app/Services/cyber.service';
 
 @Component({
   selector: 'app-cyber',
@@ -10,24 +11,15 @@ import { Router } from '@angular/router';
 export class CyberComponent implements OnInit {
 
   // Forms variables
-  clientsform!: FormGroup;
-
   cyberform!: FormGroup;
 
-  // Display variables
-  pastclientsname: boolean = false;
-
-  constructor(private fbservice : FormBuilder, private router:Router) { }
+  constructor(private fbservice : FormBuilder, private router:Router, private cyberservice : CyberService) { }
 
   ngOnInit() {
 
-    // Client's form model
-    this.clientsform = this.fbservice.group({
-      clientsname:['', [Validators.required, Validators.minLength(3)]]
-    })
-
     // Cyber form model
     this.cyberform = this.fbservice.group({
+      clientsname:['', [Validators.required, Validators.minLength(3)]],
       name: ['', [Validators.required]],
       quantity: [''],
       totalcost: ['', [Validators.required]],
@@ -75,7 +67,7 @@ export class CyberComponent implements OnInit {
 
   // Client's name
   get clientsname() {
-    return this.clientsform.get('clientsname');
+    return this.cyberform.get('clientsname');
   }
 
   // Cyber service name
@@ -113,24 +105,17 @@ export class CyberComponent implements OnInit {
     return this.cyberform.get('code');
   }
 
-
-
-  // Submit client's form function
-  registerclient() {
-
-    this.pastclientsname = true;
-
-    console.log(this.clientsform.value);
-
-  }
-
   // Submiting cyber service
   registercyberservice() {
 
-    this.pastclientsname = true;
-    console.log(this.cyberform.value)
-    
-    this.cyberform.reset();
+    this.cyberservice.registercyberservice(this.cyberform.value)
+      .subscribe(success => {
+        console.log(success);
+        this.cyberform.reset();
+      },
+        error =>{
+        console.log(error);
+      })
   }
 
   // Go back function

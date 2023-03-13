@@ -6,16 +6,16 @@
         <p>Use the form below to register cyber services</p>
     </div>
 
-    <!-- Client's Form -->
-    <form action="" [formGroup]="clientsform" (ngSubmit)="registerclient()" *ngIf="!pastclientsname">
 
-        <!-- Name -->
+    <!-- Registering cyber service -->
+    <form action="" [formGroup]="cyberform" (ngSubmit)="registercyberservice()">
+
+        <!-- Client's Name -->
         <div class="form-group">
             <label for="" class="my-1 mb-1">Client's Name</label>
             <input type="text" class="form-control" name="clientsname" formControlName="clientsname"
-            [class.is-invalid]="clientsname?.invalid && clientsname?.dirty"
-            > 
-
+                [class.is-invalid]="clientsname?.invalid && clientsname?.dirty">
+        
             <!-- Error Messages -->
             <div class="text-danger" *ngIf="clientsname?.invalid && clientsname?.dirty">
                 <small *ngIf="clientsname?.errors?.['required']">Required</small>
@@ -23,15 +23,7 @@
             </div>
         </div>
 
-        <!-- Submit button  -->
-        <button class="btn btn-rounded btn-primary m-2" type="submit" [disabled]="clientsform.invalid">Submit</button>
-
-    </form>
-
-    <!-- Registering cyber service -->
-    <form action="" [formGroup]="cyberform" (ngSubmit)="registercyberservice()" *ngIf="pastclientsname">
-
-        <!-- Name -->
+        <!-- Product | Service Name -->
         <div class="form-group">
             <label for="" class="my-3 mb-1">Service | Item Name</label>
             <input type="text" class="form-control" name="name" formControlName="name"
@@ -93,17 +85,6 @@
         <button class="btn btn-primary btn-rounded m-2" type="submit" [disabled]="cyberform.invalid">Add Bill</button>
 
     </form>
-
-    <!-- Billing Report -->
-    <div class="col-md-6 mx-auto pt-3 billingreport" *ngIf="pastclientsname">
-
-        <div class="text-center">
-            <h2>Client's Billing</h2>
-            <hr>
-            <p>Entered service will appear here</p>
-        </div>
-
-    </div>
 
     <hr>
 
