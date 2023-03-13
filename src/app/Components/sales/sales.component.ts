@@ -10,8 +10,6 @@ import { Router } from '@angular/router';
 export class SalesComponent implements OnInit {
 
   // Forms variables
-  clientdataform!: FormGroup;
-
   salesform!: FormGroup;
 
   // Display variables
@@ -20,22 +18,10 @@ export class SalesComponent implements OnInit {
   
   constructor(private fbservice : FormBuilder, private router : Router) { }
 
-  // Submits functions
-  registerclient() {
-    this.billingready = true;
-    console.log(this.clientdataform.value);
-    this.clientdataform.reset();
-  }
-
   // Add to billing report
   additem() {
     console.log(this.salesform.value);
     this.salesform.reset();
-  }
-
-  // Generate billing report
-  generatereport() {
-    
   }
 
   // Go back function
@@ -44,66 +30,29 @@ export class SalesComponent implements OnInit {
   }
 
   ngOnInit() {
-
-    // Client's form model
-    this.clientdataform = this.fbservice.group({
-      clientname: ['', [Validators.required, Validators.minLength(3)]]
-    })
-
     // Sales form model
     this.salesform = this.fbservice.group({
-      itemname: ['', [Validators.required]],
+      clientsname: ['', [Validators.required]],
+      productname: ['', [Validators.required]],
       quantity: ['', [Validators.required]],
-      mpesa: [''],
-      cash: [''],
-      cheque: [''],
-      code: ['']
+      payment: ['', [Validators.required]],
+      transactioncode: ['']
     });
 
-    // M-Pesa conditional validation
-  this.salesform.get('mpesa')?.valueChanges
-     .subscribe((checkedvalue) =>{
-
-      // getting code field
-      const code = this.code;
-
-      if(checkedvalue){
-        code?.setValidators([Validators.required]);
-      }
-      else{
-        code?.clearValidators()
-      }
-      code?.updateValueAndValidity();
-     }) 
-    
-    // Cheque conditional validation
-    this.salesform.get('cheque')?.valueChanges
-     .subscribe((checkedvalue) =>{
-
-      // getting code field
-      const code = this.code;
-
-      if(checkedvalue){
-        code?.setValidators([Validators.required]);
-      }
-      else{
-        code?.clearValidators()
-      }
-      code?.updateValueAndValidity();
-     }) 
-
   }
+
+ 
 
   // GETTER FUNCTIONS
 
   // clientsname
   get clientname() {
-    return this.clientdataform.get('clientname');
+    return this.salesform.get('clientsname');
   }
 
   // Items name
   get itemname() {
-    return this.salesform.get('itemname');
+    return this.salesform.get('productname');
   }
 
   // Quantity
@@ -111,19 +60,9 @@ export class SalesComponent implements OnInit {
     return this.salesform.get('quantity');
   }
 
-  // M-pesa
-  get mpesa() {
-    return this.salesform.get('mpesa');
-  }
-
-  // cash
-  get cash() {
-    return this.salesform.get('cash');
-  }
-
-  // cheque
-  get cheque() {
-    return this.salesform.get('cheque');
+//  Payment
+  get payment() {
+    return this.salesform.get('payment');
   }
 
   // Code 

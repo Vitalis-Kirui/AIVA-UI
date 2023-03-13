@@ -7,15 +7,15 @@
 
     </div>
 
-    <!-- Registering a client -->
-    <form action="" class="clientdata" [formGroup]="clientdataform" *ngIf="!billingready">
+    <!-- Sales form -->
+    <form class="salesform" [formGroup]="salesform" (ngSubmit)="additem()">
 
         <!-- Client's name -->
         <div class="form-group">
             <label for="" class="mb-1 my-2">Client's Name</label>
-            <input type="text" class="form-control" name="clientname" formControlName="clientname"
+            <input type="text" class="form-control" name="clientsname" formControlName="clientsname"
                 [class.is-invalid]="clientname?.invalid && clientname?.dirty">
-
+        
             <!-- Error messages -->
             <div class="text-danger" *ngIf="clientname?.invalid && clientname?.dirty">
                 <small *ngIf="clientname?.errors?.['required']">Required</small>
@@ -23,19 +23,10 @@
             </div>
         </div>
 
-        <!-- Submit and Bill -->
-        <button class="btn btn-primary btn-rounded m-2" type="button" (click)="registerclient()"
-            [disabled]="clientdataform.invalid">Start Billing</button>
-
-    </form>
-
-    <!-- Sales form -->
-    <form class="salesform" [formGroup]="salesform" *ngIf="billingready" (ngSubmit)="additem()">
-
         <!-- Product name -->
         <div class="form-group">
             <label for="" class="mb-1 my-2">Product | Item Name</label>
-            <input type="text" class="form-control" name="itemname" formControlName="itemname"
+            <input type="text" class="form-control" name="productname" formControlName="productname"
                 [class.is-invalid]="itemname?.invalid && itemname?.dirty">
 
             <!-- Error message -->
@@ -54,29 +45,30 @@
         </div>
 
         <!-- Mode of payment -->
-        <!-- Mpesa -->
-        <div class="form-group mb-1 mt-3">
-            <label for="" class="my-3 mb-2">Mode of Payment</label> <br>
-            <input type="checkbox" class="form-check-input" name="mpesa" formControlName="mpesa">
-            <label for="" class="form-check-label">M-Pesa | Till Number</label>
-        </div>
-
-        <!-- Cash -->
-        <div class="form-group mb-1 mt-3">
-            <input type="checkbox" class="form-check-input" name="cash" formControlName="cash">
-            <label for="" class="form-check-label">Cash</label>
-        </div>
-
-        <!-- Cheque -->
-        <div class="form-group mb-1 mt-3">
-            <input type="checkbox" class="form-check-input" name="cheque" formControlName="cheque">
-            <label for="" class="form-check-label">Cheque</label>
+        <div class="my-3">
+            <p class="label">Mode of Payment</p>
+            <label>
+                <input type="radio" formControlName="payment" value="m-pesa">
+                M-pesa
+            </label>
+            <br>
+            <label>
+                <input type="radio" formControlName="payment" value="cheque">
+                Cheque
+            </label>
+            <br>
+            <label>
+                <input type="radio" formControlName="payment" value="cash">
+                Cash
+            </label>
+            <br>
+        
         </div>
 
         <!-- Transaction code -->
         <div class="form-group">
             <label for="" class="mb-1 my-3">Transaction Code</label>
-            <input type="text" class="form-control" name="code" formControlName="code"
+            <input type="text" class="form-control" name="transactioncode" formControlName="transactioncode"
                 [class.is-invalid]="code?.invalid && code?.dirty">
 
             <!-- Error message -->
@@ -87,17 +79,6 @@
         <button class="btn btn-rounded btn-primary m-3" type="submit" [disabled]="salesform.invalid">Add Item</button>
 
     </form>
-
-    <!-- Billing items before generating a reciept -->
-    <div class="col-md-6 mx-auto my-5" *ngIf="billingready">
-
-        <div class="text-center">
-            <h2>Billing Recient</h2>
-            <hr>
-            <p>Items added will appear here.</p>
-        </div>
-
-    </div>
 
     <hr>
 

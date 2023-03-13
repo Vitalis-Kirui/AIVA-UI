@@ -19,46 +19,13 @@ export class CyberComponent implements OnInit {
 
     // Cyber form model
     this.cyberform = this.fbservice.group({
-      clientsname:['', [Validators.required, Validators.minLength(3)]],
+      clientsname: ['', [Validators.required, Validators.minLength(3)]],
       servicename: ['', [Validators.required]],
       quantity: [''],
       totalcost: ['', [Validators.required]],
-      payment:['', [Validators.required]],
+      payment: ['cash', [Validators.required]],
       transactioncode: ['']
     });
-
-     // M-Pesa conditional validation
-  this.cyberform.get('mpesa')?.valueChanges
-     .subscribe((checkedvalue) =>{
-
-      // getting code field
-      const code = this.code;
-
-      if(checkedvalue){
-        code?.setValidators([Validators.required]);
-      }
-      else{
-        code?.clearValidators()
-      }
-      code?.updateValueAndValidity();
-     }) 
-    
-    // Cheque conditional validation
-    this.cyberform.get('cheque')?.valueChanges
-     .subscribe((checkedvalue) =>{
-
-      // getting code field
-      const code = this.code;
-
-      if(checkedvalue){
-        code?.setValidators([Validators.required]);
-      }
-      else{
-        code?.clearValidators()
-      }
-      code?.updateValueAndValidity();
-     }) 
-
   }
 
   // Getter functions
