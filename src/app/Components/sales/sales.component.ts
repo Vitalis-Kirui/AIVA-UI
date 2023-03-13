@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
+import { SaleService } from 'src/app/Services/sale.service';
 
 @Component({
   selector: 'app-sales',
@@ -16,12 +17,20 @@ export class SalesComponent implements OnInit {
 
   billingready: boolean = false;
   
-  constructor(private fbservice : FormBuilder, private router : Router) { }
+  constructor(private fbservice : FormBuilder, private router : Router, private salesservice :SaleService) { }
 
   // Add to billing report
   additem() {
-    console.log(this.salesform.value);
-    this.salesform.reset();
+
+    this.salesservice.registernewsale(this.salesform.value)
+      .subscribe(data => {
+        console.log(data);
+        this.salesform.reset();
+      },
+        error => {
+        console.log(error);
+      })
+    
   }
 
   // Go back function
