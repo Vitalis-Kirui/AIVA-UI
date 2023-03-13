@@ -23,9 +23,7 @@ export class CyberComponent implements OnInit {
       servicename: ['', [Validators.required]],
       quantity: [''],
       totalcost: ['', [Validators.required]],
-      mpesa: [''],
-      cash: [''],
-      cheque: [''],
+      payment:['', [Validators.required]],
       transactioncode: ['']
     });
 
@@ -85,19 +83,9 @@ export class CyberComponent implements OnInit {
     return this.cyberform.get('totalcost');
   }
 
-  // M-pesa
-  get mpesa() {
-    return this.cyberform.get('mpesa');
-  }
-
-  // cash
-  get cash() {
-    return this.cyberform.get('cash');
-  }
-
-  // cheque
-  get cheque() {
-    return this.cyberform.get('cheque');
+  // Payment
+  get payment() {
+    return this.cyberform.get('payment');
   }
 
   // Code 

@@ -3,7 +3,7 @@ form{
     margin: auto;
 }
 
-label{
+label, .label{
     color: rgb(11, 11, 209);
     font-size: 18px;
 }

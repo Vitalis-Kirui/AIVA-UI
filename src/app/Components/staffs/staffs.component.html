@@ -18,10 +18,10 @@
         <!-- Existing staff details -->
         <div class="col-md-6 existingdetails mx-auto" *ngIf="seeexistingstaffs">
 
-            <div >
+            <div>
                 <h2 class="text-center">Your Staffs</h2>
                 <hr>
-                
+
                 <div class="allstaffs" *ngFor="let staff of allstaffs">
 
                     <div class="text-start">
@@ -36,7 +36,8 @@
                         <li><span class="text-primary">Workstation: </span>{{staff.workstation}}</li>
                         <li><span class="text-primary">Monthly Salary: </span>{{staff.monthlysalary}}</li>
                         <li><span class="text-primary">Gender: </span>{{staff.gender}}</li>
-                        <li><span class="text-primary">Date Registered: </span>{{staff.createdAt | date | uppercase}}</li>
+                        <li><span class="text-primary">Date Registered: </span>{{staff.createdAt | date | uppercase}}
+                        </li>
                     </ul>
 
                 </div>
@@ -62,8 +63,7 @@
                     <div class="form-group">
                         <label for="" class="mb-1 my-3">First Name</label>
                         <input type="text" class="form-control" name="firstname" formControlName="firstname"
-                        [class.is-invalid]="firstname?.invalid && firstname?.dirty"
-                        >
+                            [class.is-invalid]="firstname?.invalid && firstname?.dirty">
 
                         <!-- Error messages -->
                         <div class="text-danger" *ngIf="firstname?.invalid && firstname?.dirty">
@@ -77,8 +77,7 @@
                     <div class="form-group">
                         <label for="" class="mb-1 my-3">Second Name</label>
                         <input type="text" class="form-control" name="secondname" formControlName="secondname"
-                        [class.is-invalid]="secondname?.invalid && secondname?.dirty"
-                        >
+                            [class.is-invalid]="secondname?.invalid && secondname?.dirty">
 
                         <!-- Error messages -->
                         <div class="text-danger" *ngIf="secondname?.invalid && secondname?.dirty">
@@ -92,23 +91,21 @@
                     <div class="form-group">
                         <label for="" class="mb-1 my-3">National ID</label>
                         <input type="number" class="form-control" name="nationalid" formControlName="nationalid"
-                        [class.is-invalid]="id?.invalid && id?.dirty"
-                        >
+                            [class.is-invalid]="id?.invalid && id?.dirty">
 
                         <!-- Error messages -->
                         <div class="text-danger" *ngIf="id?.invalid && id?.dirty">
                             <small *ngIf="id?.errors?.['required']">Required</small>
                             <small *ngIf="id?.errors?.['minlength']">At least 6 characters</small>
                         </div>
-                        
+
                     </div>
 
                     <!-- Phone number -->
                     <div class="form-group">
                         <label for="" class="mb-1 my-3">Phone Number</label>
                         <input type="number" class="form-control" name="phonenumber" formControlName="phonenumber"
-                        [class.is-invalid]="phonenumber?.invalid && phonenumber?.dirty"
-                        >
+                            [class.is-invalid]="phonenumber?.invalid && phonenumber?.dirty">
 
                         <!-- Error messages -->
                         <div class="text-danger" *ngIf="phonenumber?.invalid && phonenumber?.dirty">
@@ -121,8 +118,7 @@
                     <div class="form-group">
                         <label for="" class="mb-1 my-3">Age</label>
                         <input type="number" class="form-control" name="age" formControlName="age"
-                        [class.is-invalid]="age?.invalid && age?.dirty"
-                        >
+                            [class.is-invalid]="age?.invalid && age?.dirty">
 
                         <!-- Error messages -->
                         <div class="text-danger" *ngIf="age?.invalid && age?.dirty">
@@ -141,8 +137,7 @@
                     <div class="my-3">
                         <p class="label">Role | Rank</p>
                         <select class="custom-select" (change)="changerank($event)" name="role" formControlName="role"
-                        [class.is-invalid]="role?.invalid && role?.dirty"
-                        >
+                            [class.is-invalid]="role?.invalid && role?.dirty">
                             <option *ngFor="let role of roles" [ngValue]="role">{{role}}</option>
                         </select>
 
@@ -153,16 +148,16 @@
                     <!-- Gender -->
                     <div class="my-3">
                         <p class="label">Gender</p>
-                            <label>
-                                <input type="radio" formControlName="gender" value="male">
-                                Male
-                            </label>
-                        </div>
-                        <div>
-                            <label>
-                                <input type="radio" formControlName="gender" value="female">
-                                Female
-                            </label>
+                        <label>
+                            <input type="radio" formControlName="gender" value="male">
+                            Male
+                        </label>
+                    </div>
+                    <div>
+                        <label>
+                            <input type="radio" formControlName="gender" value="female">
+                            Female
+                        </label>
 
                         <!-- Error message -->
                         <small class="text-danger" *ngIf="gender?.invalid && gender?.dirty">Required</small>
@@ -172,9 +167,9 @@
                     <!-- Work station -->
                     <div class="my-3">
                         <p class="label">Work Station</p>
-                        <select class="custom-select" (change)="changestation($event)" name="workstation" formControlName="workstation"
-                        [class.is-invalid]="workstation?.invalid && workstation?.dirty"
-                        >
+                        <select class="custom-select" (change)="changestation($event)" name="workstation"
+                            formControlName="workstation"
+                            [class.is-invalid]="workstation?.invalid && workstation?.dirty">
                             <option *ngFor="let station of stations" [ngValue]="station">{{station}}</option>
                         </select>
 
@@ -186,15 +181,15 @@
                     <div class="form-group">
                         <label for="" class="mb-1 my-3">Monthly Salary</label>
                         <input type="number" class="form-control" name="monthlysalary" formControlName="monthlysalary"
-                        [class.is-invalid]="salary?.invalid && salary?.dirty"
-                        >
+                            [class.is-invalid]="salary?.invalid && salary?.dirty">
 
                         <!-- Error message -->
                         <small class="text-danger" *ngIf="salary?.invalid && salary?.dirty">Required</small>
                     </div>
 
                     <!-- Submit button -->
-                    <button class="btn btn-primary btn-rounded m-3" type="submit" [disabled]="newstaffform.invalid">Submit</button>
+                    <button class="btn btn-primary btn-rounded m-3" type="submit"
+                        [disabled]="newstaffform.invalid">Submit</button>
 
                 </form>
 
