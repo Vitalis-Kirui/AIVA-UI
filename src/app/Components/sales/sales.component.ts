@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { SaleService } from 'src/app/Services/sale.service';
+import { StockService } from 'src/app/Services/stock.service';
 
 @Component({
   selector: 'app-sales',
@@ -13,11 +14,15 @@ export class SalesComponent implements OnInit {
   // Forms variables
   salesform!: FormGroup;
 
+  // Products array
+  allstocks: any = [];
+
   // Display variables
 
   billingready: boolean = false;
   
-  constructor(private fbservice : FormBuilder, private router : Router, private salesservice :SaleService) { }
+  constructor(private fbservice: FormBuilder, private router: Router,
+    private salesservice: SaleService, private stockservice:StockService) { }
 
   // Add to billing report
   additem() {
@@ -47,6 +52,16 @@ export class SalesComponent implements OnInit {
       payment: ['', [Validators.required]],
       transactioncode: ['']
     });
+
+    // Fetching available stock names
+    this.stockservice.getallstock()
+      .subscribe(data => {
+        this.allstocks= data.stocks; 
+        console.log(this.allstocks);
+      },
+        error => {
+        console.log(error);
+      })
 
   }
 

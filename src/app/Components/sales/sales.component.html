@@ -15,7 +15,7 @@
             <label for="" class="mb-1 my-2">Client's Name</label>
             <input type="text" class="form-control" name="clientsname" formControlName="clientsname"
                 [class.is-invalid]="clientname?.invalid && clientname?.dirty">
-        
+
             <!-- Error messages -->
             <div class="text-danger" *ngIf="clientname?.invalid && clientname?.dirty">
                 <small *ngIf="clientname?.errors?.['required']">Required</small>
@@ -24,10 +24,12 @@
         </div>
 
         <!-- Product name -->
-        <div class="form-group">
-            <label for="" class="mb-1 my-2">Product | Item Name</label>
-            <input type="text" class="form-control" name="productname" formControlName="productname"
-                [class.is-invalid]="itemname?.invalid && itemname?.dirty">
+        <div class="my-3">
+            <p class="label">Product | Item name</p>
+            <select class="custom-select" name="productname"
+                formControlName="productname" [class.is-invalid]="itemname?.invalid && itemname?.dirty">
+                <option *ngFor="let stock of allstocks" [value]="stock.productname">{{stock.productname}}</option>
+            </select>
 
             <!-- Error message -->
             <small class="text-danger" *ngIf="itemname?.invalid && itemname?.dirty">Required</small>
@@ -62,7 +64,7 @@
                 Cash
             </label>
             <br>
-        
+
         </div>
 
         <!-- Transaction code -->

@@ -14,7 +14,7 @@ import { ReportsComponent } from './Components/reports/reports.component';
 import { VerificationComponent } from './Components/verification/verification.component';
 import { Error404Component } from './Components/error404/error404.component';
 import { MenuComponent } from './Components/menu/menu.component';
-import { ReactiveFormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { CyberFullComponent } from './Components/cyber-full/cyber-full.component';
 import { ExpensesFullComponent } from './Components/expenses-full/expenses-full.component';
 import { SalesFullComponent } from './Components/sales-full/sales-full.component';
@@ -41,6 +41,7 @@ import { SalesFullComponent } from './Components/sales-full/sales-full.component
     HttpClientModule,
     ReactiveFormsModule,
     AppRoutingModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
