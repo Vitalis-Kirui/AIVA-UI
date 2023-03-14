@@ -65,7 +65,12 @@ export class SalesComponent implements OnInit {
 
   }
 
- 
+  // Changing product
+  changeproduct(event: any) {
+    this.itemname?.setValue(event.target.value, {
+      onlySelf: true,
+    });
+  } 
 
   // GETTER FUNCTIONS
 

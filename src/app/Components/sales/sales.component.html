@@ -26,7 +26,7 @@
         <!-- Product name -->
         <div class="my-3">
             <p class="label">Product | Item name</p>
-            <select class="custom-select" name="productname"
+            <select class="custom-select" name="productname" (change)="changeproduct($event)" 
                 formControlName="productname" [class.is-invalid]="itemname?.invalid && itemname?.dirty">
                 <option *ngFor="let stock of allstocks" [value]="stock.productname">{{stock.productname}}</option>
             </select>
