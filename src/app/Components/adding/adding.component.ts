@@ -39,7 +39,7 @@ export class AddingComponent implements OnInit {
     // Form model
     this.stockadditionform = this.fbservice.group({
       productname: ['', [Validators.required]],
-      description:[''],
+      description: [''],
       quantity: [1, [Validators.required]],
       buyingprice: [1, [Validators.required]],
       sellingprice: [1, [Validators.required]]
@@ -52,9 +52,8 @@ export class AddingComponent implements OnInit {
         console.log(this.allstocks);
       },
         error => {
-        console.log(error);
-      })
-
+          console.log(error);
+        })
   }
 
   // Getter functions
