@@ -18,6 +18,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { CyberFullComponent } from './Components/cyber-full/cyber-full.component';
 import { ExpensesFullComponent } from './Components/expenses-full/expenses-full.component';
 import { SalesFullComponent } from './Components/sales-full/sales-full.component';
+import { StaffDetailsComponent } from './Components/staff-details/staff-details.component';
 
 @NgModule({
   declarations: [
@@ -34,7 +35,8 @@ import { SalesFullComponent } from './Components/sales-full/sales-full.component
     MenuComponent,
     CyberFullComponent,
     ExpensesFullComponent,
-    SalesFullComponent
+    SalesFullComponent,
+    StaffDetailsComponent
   ],
   imports: [
     BrowserModule,

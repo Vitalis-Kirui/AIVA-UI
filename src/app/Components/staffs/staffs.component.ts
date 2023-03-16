@@ -64,6 +64,13 @@ window.location.reload();
     
   }
 
+  // Expand function
+  expandstaff(id: any) {
+
+    this.router.navigate(['staffs/', id])
+    
+  }
+
   // Go back function
   goback() {
     this.router.navigate(['menu']);
