@@ -32,7 +32,7 @@ export class UpdateStaffComponent implements OnInit {
 
     // Form model
     this.staffupdateform = this.fbservice.group({
-      firstname: [this.existingdata.firstname, [Validators.required, Validators.minLength(3)]],
+      firstname: ['', [Validators.required, Validators.minLength(3)]],
       secondname: ['', [Validators.required, Validators.minLength(3)]],
       nationalid: ['', [Validators.required, Validators.minLength(6)]],
       phonenumber: ['', [Validators.required, Validators.minLength(9)]],
