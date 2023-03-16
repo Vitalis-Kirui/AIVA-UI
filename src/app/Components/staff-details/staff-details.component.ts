@@ -29,6 +29,24 @@ export class StaffDetailsComponent implements OnInit {
 
   }
 
+  // Deleting staff
+  deletestaff(id: any) {
+
+    let staffid = this.route.snapshot.paramMap.get('id');
+
+    this.staffservice.deletestaff(staffid)
+      .subscribe((success) => {
+        console.log(success)
+        
+        // Redirecting after deleting
+        this.router.navigate(['staffs']);
+      },
+        error => {
+          console.log(error);
+      })
+    
+  }
+
   // Go back function
   backtostaffs() {
     this.router.navigate(['staffs'])

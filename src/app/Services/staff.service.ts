@@ -45,4 +45,9 @@ export class StaffService {
     return this.http.get<any>(environment.singlestaff+id)
   }
 
+  // Deleting a staff
+  deletestaff(id: any): Observable<any>{
+    return this.http.delete<any>(environment.deletestaff + id);
+  }
+
 }

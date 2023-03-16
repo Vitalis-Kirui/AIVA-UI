@@ -35,6 +35,7 @@ export const environment = {
   supervisorstaffs:'http://localhost:3000/staffs/supervisors',
   attendantstaffs: 'http://localhost:3000/staffs/attendants',
   singlestaff: 'http://localhost:3000/staffs/staff/',
+  deletestaff: 'http://localhost:3000/staffs/staff/',
 };
 
 /*
