@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { ActivatedRoute } from '@angular/router';
 import { StaffService } from 'src/app/Services/staff.service';
 
 @Component({
@@ -21,7 +22,11 @@ export class UpdateStaffComponent implements OnInit {
   // Roles
   roles: any = ['CEO', 'Management', 'Supervisor', 'Attendant']
 
-  constructor(private fbservice:FormBuilder, private staffservice:StaffService) { }
+  // Staff object
+  existingdata: any = {};
+
+  constructor(private fbservice: FormBuilder, private staffservice: StaffService, private route: ActivatedRoute) { }
+
 
   ngOnInit() {
 
@@ -38,6 +43,21 @@ export class UpdateStaffComponent implements OnInit {
       workstation: ['', [Validators.required]],
       monthlysalary: ['', [Validators.required]]
     })
+
+    // Fetching existing data
+    // Staff id
+    let staffid = this.route.snapshot.paramMap.get('id');
+    
+    this.staffservice.getsinglestaff(staffid)
+      .subscribe((data) => {
+        
+        this.existingdata = data.staffdata;
+
+        console.log(this.existingdata);
+      },
+        error => {
+        console.log(error);
+      })
 
   }
 
