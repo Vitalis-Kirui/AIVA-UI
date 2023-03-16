@@ -39,7 +39,7 @@ export class UpdateStockComponent implements OnInit {
         this.existingstock = data.stockdata;
         console.log(this.existingstock);
 
-        // Patching values to update form
+          // Patching values to update form
         this.stockupdateform.patchValue({
           productname: this.existingstock.productname,
           description: this.existingstock.description,
@@ -51,7 +51,7 @@ export class UpdateStockComponent implements OnInit {
       },
         error => {
         console.log(error);
-      })
+        })
 
   }
 
