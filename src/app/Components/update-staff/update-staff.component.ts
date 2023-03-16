@@ -11,7 +11,7 @@ import { StaffService } from 'src/app/Services/staff.service';
 export class UpdateStaffComponent implements OnInit {
 
    // Form variable
-  newstaffform!: FormGroup;
+  staffupdateform!: FormGroup;
 
   // Work stations
   stations: any = ['All', 'Chebunyo', 'Kaboson']
@@ -31,8 +31,8 @@ export class UpdateStaffComponent implements OnInit {
   ngOnInit() {
 
     // Form model
-    this.newstaffform = this.fbservice.group({
-      firstname: ['', [Validators.required, Validators.minLength(3)]],
+    this.staffupdateform = this.fbservice.group({
+      firstname: [this.existingdata.firstname, [Validators.required, Validators.minLength(3)]],
       secondname: ['', [Validators.required, Validators.minLength(3)]],
       nationalid: ['', [Validators.required, Validators.minLength(6)]],
       phonenumber: ['', [Validators.required, Validators.minLength(9)]],
@@ -49,11 +49,26 @@ export class UpdateStaffComponent implements OnInit {
     let staffid = this.route.snapshot.paramMap.get('id');
     
     this.staffservice.getsinglestaff(staffid)
-      .subscribe((data) => {
+      .subscribe(data => {
         
         this.existingdata = data.staffdata;
 
         console.log(this.existingdata);
+
+        // Patching values to the form
+        this.staffupdateform.patchValue({
+          firstname: this.existingdata.firstname,
+          secondname: this.existingdata.secondname,
+          nationalid: this.existingdata.nationalid,
+          phonenumber: this.existingdata.phonenumber,
+          age: this.existingdata.age,
+          image:this.existingdata.image,
+          role: this.existingdata.role,
+          gender: this.existingdata.gender,
+          workstation: this.existingdata.workstation,
+          monthlysalary: this.existingdata.monthlysalary
+        })
+
       },
         error => {
         console.log(error);
@@ -63,6 +78,8 @@ export class UpdateStaffComponent implements OnInit {
 
   // Update staff function
   updatestaff() {
+
+    console.log(this.staffupdateform.value)
     
   }
 
@@ -70,47 +87,47 @@ export class UpdateStaffComponent implements OnInit {
 
   // Firstname
   get firstname() {
-    return this.newstaffform.get('firstname');
+    return this.staffupdateform.get('firstname');
   }
 
   // Second name
   get secondname() {
-    return this.newstaffform.get('secondname');
+    return this.staffupdateform.get('secondname');
   }
 
   // id
   get id() {
-    return this.newstaffform.get('nationalid');
+    return this.staffupdateform.get('nationalid');
   }
 
   // Phone number
   get phonenumber() {
-    return this.newstaffform.get('phonenumber');
+    return this.staffupdateform.get('phonenumber');
   }
 
   // age
   get age() {
-    return this.newstaffform.get('age');
+    return this.staffupdateform.get('age');
   }
 
   // role
   get role() {
-    return this.newstaffform.get('role');
+    return this.staffupdateform.get('role');
   }
 
   // gender
   get gender() {
-    return this.newstaffform.get('gender');
+    return this.staffupdateform.get('gender');
   }
 
   // Workstation
   get workstation() {
-    return this.newstaffform.get('workstation');
+    return this.staffupdateform.get('workstation');
   }
 
   // Salary
   get salary() {
-    return this.newstaffform.get('monthlysalary');
+    return this.staffupdateform.get('monthlysalary');
   }
 
   // Tracking changes in the dropdowns

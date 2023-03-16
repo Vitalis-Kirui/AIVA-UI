@@ -13,7 +13,7 @@
         <!-- Add new staff form -->
         <div class="form pt-3">
         
-            <form action="" [formGroup]="newstaffform" (ngSubmit)="updatestaff()">
+            <form action="" [formGroup]="staffupdateform" (ngSubmit)="updatestaff()">
         
                 <!-- First name -->
                 <div class="form-group">
@@ -143,7 +143,7 @@
                 </div>
         
                 <!-- Submit button -->
-                <button class="btn btn-primary btn-rounded m-3" type="submit" [disabled]="newstaffform.invalid">Submit</button>
+                <button class="btn btn-primary btn-rounded m-3" type="submit" [disabled]="staffupdateform.invalid">Update</button>
         
             </form>
         
