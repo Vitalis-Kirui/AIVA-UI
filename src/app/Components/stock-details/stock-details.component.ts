@@ -30,4 +30,9 @@ export class StockDetailsComponent implements OnInit {
 
   }
 
+  // Back to stock functions
+  backtostocks() {
+    this.router.navigate(['adding'])
+  }
+
 }
