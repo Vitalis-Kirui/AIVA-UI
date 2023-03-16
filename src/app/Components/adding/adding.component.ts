@@ -18,7 +18,7 @@ export class AddingComponent implements OnInit {
 
   // Display variables
   addingstock: boolean = false;
-  seeingstock: boolean = false;
+  seeingstock: boolean = true;
 
   constructor(private fbservice: FormBuilder, private router: Router, private stockservice:StockService) { }
   
@@ -30,7 +30,6 @@ export class AddingComponent implements OnInit {
 
   // See stock display function
   seestock() {
-    this.seeingstock = true;
     this.addingstock = false;
   }
 
