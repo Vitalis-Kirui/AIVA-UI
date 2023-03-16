@@ -9,6 +9,7 @@ export const environment = {
   addstock: 'http://localhost:3000/stock/new-stock',
   allstock: 'http://localhost:3000/stock/all-stocks',
   singlestock: 'http://localhost:3000/stock/single-stock/',
+  deletestock: 'http://localhost:3000/stock/delete-stock/',
 
   
   // Cyber endpoints

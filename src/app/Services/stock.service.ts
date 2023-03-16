@@ -22,7 +22,12 @@ export class StockService {
 
   // Fetching a single stock data
   getsinglestock(id: any): Observable<any>{
-    return this.http.get<any>(environment.singlestock+id)
+    return this.http.get<any>(environment.singlestock + id);
+  }
+
+  // Deleting stock
+  deletestock(id: any): Observable<any>{
+    return this.http.delete<any>(environment.deletestock + id);
   }
   
 }

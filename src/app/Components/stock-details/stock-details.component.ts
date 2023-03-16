@@ -30,6 +30,22 @@ export class StockDetailsComponent implements OnInit {
 
   }
 
+  // Deleting stock
+  deletestock(id: any) {
+
+    let stockid = this.route.snapshot.paramMap.get('id');
+
+    this.stockservice.deletestock(stockid)
+      .subscribe((success) => {
+          console.log("The stock was deleted successfuly")
+      },
+        error => {
+          console.log("Error deleting stock", error)
+        }
+      )
+    
+  }
+
   // Back to stock functions
   backtostocks() {
     this.router.navigate(['adding'])
