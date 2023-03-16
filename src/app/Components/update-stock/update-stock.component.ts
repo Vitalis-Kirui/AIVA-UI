@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { ActivatedRoute } from '@angular/router';
+import { StockService } from 'src/app/Services/stock.service';
 
 @Component({
   selector: 'app-update-stock',
@@ -11,7 +13,10 @@ export class UpdateStockComponent implements OnInit {
   // Stock update form
   stockupdateform!: FormGroup;
 
-  constructor(private fbservice:FormBuilder) { }
+  // Existing stock data
+  existingstock: any = {};
+
+  constructor(private fbservice:FormBuilder, private stockservice:StockService, private route:ActivatedRoute) { }
 
   ngOnInit() {
 
@@ -19,15 +24,41 @@ export class UpdateStockComponent implements OnInit {
     this.stockupdateform = this.fbservice.group({
       productname: ['', [Validators.required]],
       description: [''],
-      quantity: [1, [Validators.required]],
-      buyingprice: [1, [Validators.required]],
-      sellingprice: [1, [Validators.required]]
+      quantity: [, [Validators.required]],
+      buyingprice: [, [Validators.required]],
+      sellingprice: [, [Validators.required]]
     })
+
+    // Fetching existing stock information
+
+    let id = this.route.snapshot.paramMap.get('id');
+
+    this.stockservice.getsinglestock(id)
+      .subscribe(data => { 
+
+        this.existingstock = data.stockdata;
+        console.log(this.existingstock);
+
+        // Patching values to update form
+        this.stockupdateform.patchValue({
+          productname: this.existingstock.productname,
+          description: this.existingstock.description,
+          quantity: this.existingstock.quantity,
+          buyingprice: this.existingstock.buyingprice,
+          sellingprice:this.existingstock.sellingprice
+        })
+
+      },
+        error => {
+        console.log(error);
+      })
 
   }
 
   // update function
   updatestock() {
+
+    console.log(this.stockupdateform.value)
     
   }
 
