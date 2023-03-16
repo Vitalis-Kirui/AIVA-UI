@@ -94,8 +94,11 @@ export class AddingComponent implements OnInit {
           console.log(error);
       })
 
-    
+  }
 
+  // Open a single stock
+  openstock(id: any) {
+    this.router.navigate(['adding/stocks/stock/', id])
   }
 
   // Go back function

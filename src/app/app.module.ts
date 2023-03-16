@@ -19,6 +19,7 @@ import { CyberFullComponent } from './Components/cyber-full/cyber-full.component
 import { ExpensesFullComponent } from './Components/expenses-full/expenses-full.component';
 import { SalesFullComponent } from './Components/sales-full/sales-full.component';
 import { StaffDetailsComponent } from './Components/staff-details/staff-details.component';
+import { StockDetailsComponent } from './Components/stock-details/stock-details.component';
 
 @NgModule({
   declarations: [
@@ -36,7 +37,8 @@ import { StaffDetailsComponent } from './Components/staff-details/staff-details.
     CyberFullComponent,
     ExpensesFullComponent,
     SalesFullComponent,
-    StaffDetailsComponent
+    StaffDetailsComponent,
+    StockDetailsComponent
   ],
   imports: [
     BrowserModule,

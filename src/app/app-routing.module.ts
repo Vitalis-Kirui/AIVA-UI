@@ -13,6 +13,7 @@ import { SalesFullComponent } from './Components/sales-full/sales-full.component
 import { SalesComponent } from './Components/sales/sales.component';
 import { StaffDetailsComponent } from './Components/staff-details/staff-details.component';
 import { StaffsComponent } from './Components/staffs/staffs.component';
+import { StockDetailsComponent } from './Components/stock-details/stock-details.component';
 import { VerificationComponent } from './Components/verification/verification.component';
 
 const routes: Routes = [
@@ -28,7 +29,8 @@ const routes: Routes = [
   { path: 'sales/full-report', component: SalesFullComponent },
   {path: 'expenses/full-report', component: ExpensesFullComponent},
   {path: 'cyber/full-report', component: CyberFullComponent},
-  {path: 'staffs/staff/:id', component: StaffDetailsComponent},
+  { path: 'staffs/staff/:id', component: StaffDetailsComponent },
+  {path: 'adding/stocks/stock/:id', component: StockDetailsComponent},
   { path: '**', component: Error404Component },
 ];
 
