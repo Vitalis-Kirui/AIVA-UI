@@ -19,5 +19,10 @@ export class StockService {
   getallstock(): Observable<any>{
     return this.http.get<any>(environment.allstock);
   }
+
+  // Fetching a single stock data
+  getsinglestock(id: any): Observable<any>{
+    return this.http.get<any>(environment.singlestock+id)
+  }
   
 }

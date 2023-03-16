@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute, Router } from '@angular/router';
+import { StockService } from 'src/app/Services/stock.service';
 
 @Component({
   selector: 'app-stock-details',
@@ -7,9 +9,25 @@ import { Component, OnInit } from '@angular/core';
 })
 export class StockDetailsComponent implements OnInit {
 
-  constructor() { }
+  // Stock details
+  stockdetails: any = {};
 
-  ngOnInit(): void {
+  constructor(private route: ActivatedRoute, private router:Router, private stockservice:StockService) { }
+
+  ngOnInit() {
+
+    // ID
+    let id = this.route.snapshot.paramMap.get('id')
+
+    this.stockservice.getsinglestock(id)
+      .subscribe((data) => {
+        this.stockdetails = data.stockdata;
+        console.log(this.stockdetails)
+      },
+        error => {
+        console.log(error)
+      })
+
   }
 
 }

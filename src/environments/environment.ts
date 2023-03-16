@@ -8,6 +8,8 @@ export const environment = {
   // Stock endpoints
   addstock: 'http://localhost:3000/stock/new-stock',
   allstock: 'http://localhost:3000/stock/all-stocks',
+  singlestock: 'http://localhost:3000/stock/single-stock/',
+
   
   // Cyber endpoints
   registercyberservice: 'http://localhost:3000/cyber/new-cyber-service',
