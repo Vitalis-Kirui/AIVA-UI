@@ -29,4 +29,9 @@ export class StaffDetailsComponent implements OnInit {
 
   }
 
+  // Go back function
+  backtostaffs() {
+    this.router.navigate(['staffs'])
+  }
+
 }
