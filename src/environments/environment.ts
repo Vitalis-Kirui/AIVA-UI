@@ -30,8 +30,8 @@ export const environment = {
   ceostaffs: 'http://localhost:3000/staffs/ceos',
   managementstaffs:'http://localhost:3000/staffs/management',
   supervisorstaffs:'http://localhost:3000/staffs/supervisors',
-  attendantstaffs:'http://localhost:3000/staffs/attendants',
-  
+  attendantstaffs: 'http://localhost:3000/staffs/attendants',
+  singlestaff: 'http://localhost:3000/staffs/staff/',
 };
 
 /*

@@ -40,4 +40,9 @@ export class StaffService {
     return this.http.get<any>(environment.attendantstaffs);
   }
 
+  // Getting single staff details
+  getsinglestaff(id: any): Observable<any>{
+    return this.http.get<any>(environment.singlestaff+id)
+  }
+
 }
