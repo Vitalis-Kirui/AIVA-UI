@@ -30,6 +30,11 @@ export class StockDetailsComponent implements OnInit {
 
   }
 
+  // Updating stock
+  updatestock(id: any) {
+    this.router.navigate(['adding/stocks/update-stock',id]);
+  }
+
   // Deleting stock
   deletestock(id: any) {
 

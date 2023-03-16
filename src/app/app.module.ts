@@ -20,6 +20,8 @@ import { ExpensesFullComponent } from './Components/expenses-full/expenses-full.
 import { SalesFullComponent } from './Components/sales-full/sales-full.component';
 import { StaffDetailsComponent } from './Components/staff-details/staff-details.component';
 import { StockDetailsComponent } from './Components/stock-details/stock-details.component';
+import { UpdateStaffComponent } from './Components/update-staff/update-staff.component';
+import { UpdateStockComponent } from './Components/update-stock/update-stock.component';
 
 @NgModule({
   declarations: [
@@ -38,7 +40,9 @@ import { StockDetailsComponent } from './Components/stock-details/stock-details.
     ExpensesFullComponent,
     SalesFullComponent,
     StaffDetailsComponent,
-    StockDetailsComponent
+    StockDetailsComponent,
+    UpdateStaffComponent,
+    UpdateStockComponent
   ],
   imports: [
     BrowserModule,

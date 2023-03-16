@@ -29,6 +29,11 @@ export class StaffDetailsComponent implements OnInit {
 
   }
 
+  // Update staff details
+  updatestaff(id: any) {
+    this.router.navigate(['staffs/update-staff',id]);
+  }
+
   // Deleting staff
   deletestaff(id: any) {
 
