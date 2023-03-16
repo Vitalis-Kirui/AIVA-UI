@@ -37,7 +37,11 @@ export class StockDetailsComponent implements OnInit {
 
     this.stockservice.deletestock(stockid)
       .subscribe((success) => {
-          console.log("The stock was deleted successfuly")
+        console.log("The stock was deleted successfuly")
+
+        // Redirect
+        this.router.navigate(['adding'])
+        
       },
         error => {
           console.log("Error deleting stock", error)
