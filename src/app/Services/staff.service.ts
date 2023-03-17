@@ -50,4 +50,9 @@ export class StaffService {
     return this.http.delete<any>(environment.deletestaff + id);
   }
 
+  // Updating staff
+  updatestaff(id: any, newstaffdata : any): Observable<any>{
+    return this.http.put<any>(environment.updatestaff + id, newstaffdata);
+  };
+
 }

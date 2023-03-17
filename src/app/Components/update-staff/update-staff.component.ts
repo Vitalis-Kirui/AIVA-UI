@@ -79,7 +79,20 @@ export class UpdateStaffComponent implements OnInit {
   // Update staff function
   updatestaff() {
 
-    console.log(this.staffupdateform.value)
+    let id  = this.route.snapshot.paramMap.get('id');
+
+    let newdata = this.staffupdateform.value;
+
+    this.staffservice.updatestaff(id, newdata)
+        .subscribe(data =>{
+          console.log(data);
+
+          // Redirect
+          this.router.navigate(['staffs']);	
+        },
+        error =>{
+          console.log(error);
+        })
     
   }
 
