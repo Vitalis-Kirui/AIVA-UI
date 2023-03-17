@@ -41,11 +41,11 @@ export class UpdateStockComponent implements OnInit {
 
           // Patching values to update form
         this.stockupdateform.patchValue({
-          productname: this.existingstock.productname,
-          description: this.existingstock.description,
-          quantity: this.existingstock.quantity,
-          buyingprice: this.existingstock.buyingprice,
-          sellingprice:this.existingstock.sellingprice
+          productname: this.existingstock[0].productname,
+          description: this.existingstock[0].description,
+          quantity: this.existingstock[0].quantity,
+          buyingprice: this.existingstock[0].buyingprice,
+          sellingprice:this.existingstock[0].sellingprice
         })
 
       },
