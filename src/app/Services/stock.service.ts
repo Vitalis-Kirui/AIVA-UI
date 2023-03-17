@@ -29,5 +29,10 @@ export class StockService {
   deletestock(id: any): Observable<any>{
     return this.http.delete<any>(environment.deletestock + id);
   }
+
+  // Updating stock
+  updatestock(id: any, updatedata: any): Observable<any>{
+    return this.http.put<any>(environment.updatestock +id, updatedata);
+  }
   
 }

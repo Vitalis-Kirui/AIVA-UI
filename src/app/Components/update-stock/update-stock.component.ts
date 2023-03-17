@@ -58,7 +58,19 @@ export class UpdateStockComponent implements OnInit {
   // update function
   updatestock() {
 
-    console.log(this.stockupdateform.value)
+    let id = this.route.snapshot.paramMap.get('id');
+
+    const updatedata = this.stockupdateform.value;
+
+    this.stockservice.updatestock(id, updatedata)
+        .subscribe(data => {
+
+          console.log(data);
+
+        },
+        error =>{
+          console.log(error);
+        });
     
   }
 
