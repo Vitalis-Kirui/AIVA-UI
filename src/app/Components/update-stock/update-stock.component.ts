@@ -99,7 +99,7 @@ export class UpdateStockComponent implements OnInit {
 
     // Go back function
     goback(){
-      this.router.navigate(['staffs']);
+      this.router.navigate(['adding']);
     }
 
   }
