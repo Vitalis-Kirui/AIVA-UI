@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { StaffService } from 'src/app/Services/staff.service';
 
 @Component({
@@ -25,7 +25,7 @@ export class UpdateStaffComponent implements OnInit {
   // Staff object
   existingdata: any = {};
 
-  constructor(private fbservice: FormBuilder, private staffservice: StaffService, private route: ActivatedRoute) { }
+  constructor(private fbservice: FormBuilder, private staffservice: StaffService, private route: ActivatedRoute, private router:Router) { }
 
 
   ngOnInit() {
@@ -151,5 +151,10 @@ export class UpdateStaffComponent implements OnInit {
     this.workstation?.setValue(event.target.value, {
       onlySelf: true,
     });
+  }
+
+  // Go back function
+  goback(){
+    this.router.navigate(['adding']);
   }
 }
