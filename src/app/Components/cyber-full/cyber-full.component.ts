@@ -12,6 +12,9 @@ export class CyberFullComponent implements OnInit {
   // Cyber services array
   cyberservices: any = [];
 
+  // Grand total
+  grandtotal: any;
+
   constructor(private router: Router, private cyberservice : CyberService) { }
   
   // Back to reports function
@@ -25,7 +28,9 @@ export class CyberFullComponent implements OnInit {
     this.cyberservice.getallcyberservices()
       .subscribe(data => {
         this.cyberservices = data.cyberservices;
-        console.log(this.cyberservices);
+
+        this.grandtotal = data.grandtotal;
+        console.log(data);
       },
         error => {
           console.log(error);
