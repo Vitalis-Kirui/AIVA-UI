@@ -12,6 +12,9 @@ export class ExpensesFullComponent implements OnInit {
   // Expense array
   expenses: any = [];
 
+  // Grand total 
+  grandtotal :any;
+
   constructor(private router : Router, private expenseservice: ExpenseService) { }
 
     // Back to reports function
@@ -26,6 +29,8 @@ export class ExpensesFullComponent implements OnInit {
       .subscribe(data => {
         this.expenses = data.expenses;
         console.log(this.expenses);
+
+        this.grandtotal = data.grandtotal;
       },
         error => {
           console.log(error);

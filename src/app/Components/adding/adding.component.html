@@ -108,7 +108,7 @@
                     <p><span class="text-success p-2">Total worth by selling prices:</span> {{stock.quantity *
                         stock.sellingprice}}</p>
 
-                    <p><span class="text-success p-2">Estimated profit:</span> {{((stock.quantity *
+                    <p><span class="text-success p-2">Expected profit:</span> {{((stock.quantity *
                         stock.sellingprice)-(stock.quantity * stock.buyingprice))}}</p>
 
                 </div>
@@ -134,9 +134,11 @@
 
         <!-- Projection -->
         <div class="projection py-3">
-            <p *ngIf="(totalsellingprices - totalbuyingprices) > 1">PROJECTION: <span class="text-primary">{{(totalsellingprices - totalbuyingprices)}}</span> <span
+            <p *ngIf="(totalsellingprices - totalbuyingprices) > 1">PROJECTION: <span
+                    class="text-primary">{{(totalsellingprices - totalbuyingprices)}}</span> <span
                     class="text-bg-success p-3">Profit</span></p>
-            <p *ngIf="(totalsellingprices - totalbuyingprices) < 0">PROJECTION: <span class="text-primary">{{(totalsellingprices - totalbuyingprices)}}</span> <span
+            <p *ngIf="(totalsellingprices - totalbuyingprices) < 0">PROJECTION: <span
+                    class="text-primary">{{(totalsellingprices - totalbuyingprices)}}</span> <span
                     class="text-bg-danger p-3">Loss</span></p>
 
         </div>
