@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { StockService } from 'src/app/Services/stock.service';
 
 @Component({
@@ -16,7 +16,7 @@ export class UpdateStockComponent implements OnInit {
   // Existing stock data
   existingstock: any = {};
 
-  constructor(private fbservice:FormBuilder, private stockservice:StockService, private route:ActivatedRoute) { }
+  constructor(private fbservice:FormBuilder, private stockservice:StockService, private route:ActivatedRoute, private router:Router) { }
 
   ngOnInit() {
 
@@ -83,6 +83,11 @@ export class UpdateStockComponent implements OnInit {
   // Selling price
   get sellingprice() {
       return this.stockupdateform.get('sellingprice');
+    }
+
+    // Go back function
+    goback(){
+      this.router.navigate(['staffs']);
     }
 
   }
