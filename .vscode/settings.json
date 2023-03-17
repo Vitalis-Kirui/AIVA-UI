@@ -4,7 +4,7 @@
     "terminal.integrated.defaultProfile.linux": null,
     "editor.fontFamily": "'Jost', sans-serif",
     "terminal.integrated.fontSize": 15,
-    "terminal.integrated.fontWeightBold": "bold",
+    "terminal.integrated.fontWeightBold": "normal",
     "editor.fontSize": 17,
     "terminal.integrated.fontFamily": "'Jost', sans-serif",
     "window.zoomLevel": -0.5
