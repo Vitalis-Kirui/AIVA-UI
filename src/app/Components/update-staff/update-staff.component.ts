@@ -53,21 +53,21 @@ export class UpdateStaffComponent implements OnInit {
         
         this.existingdata = data.staffdata;
 
-        console.log(this.existingdata);
-
         // Patching values to the form
         this.staffupdateform.patchValue({
-          firstname: this.existingdata.firstname,
-          secondname: this.existingdata.secondname,
-          nationalid: this.existingdata.nationalid,
-          phonenumber: this.existingdata.phonenumber,
-          age: this.existingdata.age,
-          image:this.existingdata.image,
-          role: this.existingdata.role,
-          gender: this.existingdata.gender,
-          workstation: this.existingdata.workstation,
-          monthlysalary: this.existingdata.monthlysalary
+          firstname: this.existingdata[0].firstname,
+          secondname: this.existingdata[0].secondname,
+          nationalid: this.existingdata[0].nationalid,
+          phonenumber: this.existingdata[0].phonenumber,
+          age: this.existingdata[0].age,
+          image:this.existingdata[0].image,
+          role: this.existingdata[0].role,
+          gender: this.existingdata[0].gender,
+          workstation: this.existingdata[0].workstation,
+          monthlysalary: this.existingdata[0].monthlysalary
         })
+
+        console.log(this.existingdata);
 
       },
         error => {
