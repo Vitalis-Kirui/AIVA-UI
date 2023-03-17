@@ -16,6 +16,10 @@ export class AddingComponent implements OnInit {
   // Stock array
   allstocks: any = [];
 
+  // Grand Totals
+  totalbuyingprices!: any;
+  totalsellingprices!: any;
+
   // Display variables
   addingstock: boolean = false;
   seeingstock: boolean = true;
@@ -48,7 +52,9 @@ export class AddingComponent implements OnInit {
     this.stockservice.getallstock()
       .subscribe(data => {
         this.allstocks = data.stocks;
-        console.log(this.allstocks);
+        this.totalbuyingprices = data.totalbuyingprice;
+        this.totalsellingprices = data.totalsellingprice
+        console.log(data);
       },
         error => {
           console.log(error);

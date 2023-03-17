@@ -5,7 +5,7 @@
         <button class="btn btn-primary btn-rounded m-2" type="button" (click)="addstock()">Add Stock</button>
         <button class="btn btn-primary btn-rounded m-2" type="button" (click)="seestock()">See Stock</button>
     </div>
-    
+
     <!-- Addition form -->
     <div class="form" *ngIf="addingstock">
 
@@ -14,7 +14,7 @@
             <h2>Registering New Stock</h2>
             <hr>
             <p>The form below is for adding new stock to the system</p>
-        
+
         </div>
 
         <form action="" [formGroup]="stockadditionform" (ngSubmit)="additem()">
@@ -83,7 +83,7 @@
 
     <!-- Avaible stock display -->
     <div class="col-md-8 mx-auto pt-3" *ngIf="seeingstock">
-    
+
         <div class="text-center">
             <h2>Available stock</h2>
             <hr>
@@ -102,26 +102,49 @@
                 <!-- Totals -->
                 <div class="totals py-2">
 
-                    <p><span class="text-success p-2">Total buying price:</span> {{stock.quantity * stock.buyingprice}}</p>
+                    <p><span class="text-success p-2">Total buying price:</span> {{stock.quantity * stock.buyingprice}}
+                    </p>
 
-                    <p><span class="text-success p-2">Total worth by selling prices:</span> {{stock.quantity * stock.sellingprice}}</p>
+                    <p><span class="text-success p-2">Total worth by selling prices:</span> {{stock.quantity *
+                        stock.sellingprice}}</p>
 
-                    <p><span class="text-success p-2">Estimated profit:</span> {{((stock.quantity * stock.sellingprice)-(stock.quantity * stock.buyingprice))}}</p>
+                    <p><span class="text-success p-2">Estimated profit:</span> {{((stock.quantity *
+                        stock.sellingprice)-(stock.quantity * stock.buyingprice))}}</p>
 
                 </div>
 
                 <!-- Update button -->
-                <button class="btn btn-primary btn-rounded m-2" type="button" (click)="openstock(stock._id)">Open</button>
+                <button class="btn btn-primary btn-rounded m-2" type="button"
+                    (click)="openstock(stock._id)">Open</button>
                 <hr>
 
             </ul>
 
         </div>
-    
+
+        <!-- Grand Totals and projects -->
+        <hr>
+        <div class="col-md-6 mx-auto text-center text-primary py-3">
+            <h1>Grand Stock Totals and Projections</h1>
+            <hr>
+        </div>
+
+        <p>Total Stock's Cost: <span class="text-primary bg-warning p-2">{{totalbuyingprices}}</span></p>
+        <p>Total Earning Projections: <span class="text-primary bg-warning p-2">{{totalsellingprices}}</span></p>
+
+        <!-- Projection -->
+        <div class="projection py-3">
+            <p *ngIf="(totalsellingprices - totalbuyingprices) > 1">PROJECTION: <span class="text-primary">{{(totalsellingprices - totalbuyingprices)}}</span> <span
+                    class="text-bg-success p-3">Profit</span></p>
+            <p *ngIf="(totalsellingprices - totalbuyingprices) < 0">PROJECTION: <span class="text-primary">{{(totalsellingprices - totalbuyingprices)}}</span> <span
+                    class="text-bg-danger p-3">Loss</span></p>
+
+        </div>
+
     </div>
-    
+
     <hr>
-    
+
     <!-- Go back to menu button -->
     <button class="btn btn-secondary btn-rounded m-3" type="button" (click)="goback()">Go Back</button>
 
