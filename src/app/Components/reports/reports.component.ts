@@ -19,6 +19,7 @@ export class ReportsComponent implements OnInit {
 
   // expenses array
   expenses: any = [];
+  todaystotalexpenses:any;
 
   constructor(private router: Router, private cyberservice: CyberService,
     private salesservice: SaleService, private expenseservice: ExpenseService) { }
@@ -71,7 +72,8 @@ export class ReportsComponent implements OnInit {
     this.expenseservice.gettodayexpenses()
       .subscribe(data => {
         this.expenses = data.expenses;
-        console.log(this.expenses);
+        this.todaystotalexpenses = data.todaystotal;
+        console.log(data);
       },
         error => {
           console.log(error);
