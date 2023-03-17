@@ -13,6 +13,7 @@ export class ReportsComponent implements OnInit {
 
   // Cyber services array
   cyberservices: any = [];
+  totalcyberearnings:any;
   
   // Sales array
   sales: any = [];
@@ -50,7 +51,8 @@ export class ReportsComponent implements OnInit {
     this.cyberservice.gettodaycyberservices()
       .subscribe(data => { 
         this.cyberservices = data.cyberservices;
-        console.log(this.cyberservices);
+        this.totalcyberearnings = data.todaystotal;
+        console.log("Cyber",data);
       },
         error => {
           console.log(error);
