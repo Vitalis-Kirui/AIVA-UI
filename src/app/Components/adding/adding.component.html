@@ -99,6 +99,17 @@
                 <li><span class="text-primary">Buying price: </span>{{stock.buyingprice}}</li>
                 <li><span class="text-primary">Selling price: </span>{{stock.sellingprice}}</li>
 
+                <!-- Totals -->
+                <div class="totals py-2">
+
+                    <p><span class="text-success p-2">Total buying price:</span> {{stock.quantity * stock.buyingprice}}</p>
+
+                    <p><span class="text-success p-2">Total worth by selling prices:</span> {{stock.quantity * stock.sellingprice}}</p>
+
+                    <p><span class="text-success p-2">Estimated profit:</span> {{((stock.quantity * stock.sellingprice)-(stock.quantity * stock.buyingprice))}}</p>
+
+                </div>
+
                 <!-- Update button -->
                 <button class="btn btn-primary btn-rounded m-2" type="button" (click)="openstock(stock._id)">Open</button>
                 <hr>
