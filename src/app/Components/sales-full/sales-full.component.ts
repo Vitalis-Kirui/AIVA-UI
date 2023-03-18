@@ -11,6 +11,9 @@ export class SalesFullComponent implements OnInit {
 
   // Sales array
   sales : any = [];
+  totalstocksold:any;
+  totalsoldworth:any;
+  totalsoldearnings:any;
 
   constructor(private router : Router, private salesservice : SaleService) { }
 
@@ -25,6 +28,10 @@ export class SalesFullComponent implements OnInit {
       .subscribe(data => {
         this.sales = data.sales;
         console.log("Sales: ",data);
+
+        this.totalstocksold = data.stocksold;
+        this.totalsoldworth = data.stocksoldworth;
+        this.totalsoldearnings = data.totalearnings;
       },
         error => {
           console.log(error);

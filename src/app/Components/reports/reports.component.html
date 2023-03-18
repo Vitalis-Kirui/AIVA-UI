@@ -7,11 +7,11 @@
             <p>Welcome to daily reports on sales, cyber services and expenses</p>
             <hr>
         </div>
-        
+
         <!-- Daily reports -->
         <!-- Sales -->
         <div class="col-md-4 my-3">
-        
+
             <div class="text-center pt-2">
                 <h1>Today's Sales</h1>
                 <hr>
@@ -24,7 +24,7 @@
                 <p>Earnings from stock sold: {{totalsoldearnings}}</p>
                 <p>Projection: {{totalsoldearnings-totalsoldworth}}</p>
             </div>
-        
+
             <div class="sales mt-2">
 
                 <ul *ngFor="let sale of sales">
@@ -35,8 +35,10 @@
                     <p><span class="text-primary">Transaction code:</span> {{sale.transactioncode}}</p>
                     <p><span class="text-primary">Total cost:</span> {{sale.clienttotal}}</p>
                     <p><span class="text-primary">Buying cost:</span> {{sale.buyingtotal}}</p>
-                    <p *ngIf="sale.projection > 0"><span class="text-black bg-primary p-2">Projection:</span> {{sale.projection}}</p>
-                    <p *ngIf="sale.projection < 0"><span class="text-black bg-danger p-2">Projection:</span> {{sale.projection}}</p>
+                    <p *ngIf="sale.projection > 0"><span class="text-black bg-primary p-2">Projection:</span>
+                        {{sale.projection}}</p>
+                    <p *ngIf="sale.projection < 0"><span class="text-black bg-danger p-2">Projection:</span>
+                        {{sale.projection}}</p>
 
                 </ul>
 
@@ -44,21 +46,21 @@
 
             <!-- Full report button -->
             <button class="btn btn-info m-2 btn-rounded" type="button" (click)="salesfullreport()">Full Report</button>
-        
+
         </div>
-        
+
         <!--Cyber services  -->
         <div class="col-md-4 my-3">
-        
+
             <div class="text-center pt-2">
                 <h1>Today's Cyber Services</h1>
                 <hr>
                 <p>These are today's registered cyber services</p>
                 <p class="p-2 bg-warning">Total cyber earning today sums to: {{totalcyberearnings}}</p>
             </div>
-        
+
             <div class="cyberservices mt-2">
-            
+
                 <ul *ngFor="let service of cyberservices">
                     <li class="text-bg-success p-2">{{service.clientsname | uppercase}}</li>
                     <p><span class="text-primary">Service name: </span>{{service.servicename}}</p>
@@ -67,37 +69,38 @@
                     <p><span class="text-primary">Quantity </span>{{service.quantity}}</p>
                     <P><span class="text-primary">Total cost: </span>{{service.totalcost}}</P>
                 </ul>
-            
+
             </div>
 
             <!-- Full report button -->
             <button class="btn btn-info m-2 btn-rounded" type="button" (click)="cyberfullreport()">Full Report</button>
-        
+
         </div>
-        
+
         <!-- Expenses -->
         <div class="col-md-4 my-3">
-        
+
             <div class="text-center pt-2">
                 <h1>Today's Expenses</h1>
                 <hr>
                 <p>These are today's expenses</p>
                 <p class="p-2 bg-warning">Total expenses today sums to: {{todaystotalexpenses}}</p>
             </div>
-        
+
             <div class="expenses mt-2">
-            
+
                 <ul *ngFor="let expense of expenses">
                     <li class="text-bg-success p-2">{{expense.name | uppercase}}</li>
                     <p><span class="text-primary">Description: </span>{{expense.description}}</p>
                     <p><span class="text-primary">Total cost: </span>{{expense.totalcost}} </p>
                 </ul>
-            
+
             </div>
 
             <!-- Full report button -->
-            <button class="btn btn-info m-2 btn-rounded" type="button" (click)="expensesfullreport()">Full Report</button>
-        
+            <button class="btn btn-info m-2 btn-rounded" type="button" (click)="expensesfullreport()">Full
+                Report</button>
+
         </div>
 
     </div>
