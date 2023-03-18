@@ -18,15 +18,17 @@
                 <p><span class="text-primary">Transaction code: </span>{{sale.transactioncode}}</p>
                 <p><span class="text-primary">Total cost:</span> {{sale.clienttotal}}</p>
                 <p><span class="text-primary">Buying cost:</span> {{sale.buyingtotal}}</p>
-                <p><span class="text-primary">Projection:</span> {{sale.projection}}</p>
+                <p *ngIf="sale.projection > 0"><span class="text-black bg-primary p-2">Projection:</span> {{sale.projection}}</p>
+                <p *ngIf="sale.projection < 0"><span class="text-black bg-danger p-2">Projection:</span> {{sale.projection}}</p>
                 <p><span class="text-primary">Date: </span>{{sale.createdAt | date}}</p>
             </ul>
         
         </div>
 
-        <!-- Go back to reports button -->
-        <button class="btn btn-secondary m-2 btn-rounded" type="button" (click)="backtoreports()"> Back</button>
-
     </div>
+
+    <hr>
+    <!-- Go back to reports button -->
+    <button class="btn btn-secondary m-2 btn-rounded" type="button" (click)="backtoreports()"> Back</button>
 
 </div>
