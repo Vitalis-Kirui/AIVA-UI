@@ -17,6 +17,9 @@ export class ReportsComponent implements OnInit {
   
   // Sales array
   sales: any = [];
+  totalstocksold:any;
+  totalsoldworth:any;
+  totalsoldearnings:any;
 
   // expenses array
   expenses: any = [];
@@ -63,7 +66,11 @@ export class ReportsComponent implements OnInit {
     this.salesservice.gettodaysales()
       .subscribe(data => {
         this.sales = data.sales;
-        console.log(this.sales);
+        console.log("Sales:", data);
+
+        this.totalstocksold = data.stocksold;
+        this.totalsoldworth = data.stocksoldworth;
+        this.totalsoldearnings = data.totalearnings;
       },
         error => {
           console.log(error);

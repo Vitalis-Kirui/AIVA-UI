@@ -24,7 +24,7 @@ export class SalesFullComponent implements OnInit {
     this.salesservice.getallsales()
       .subscribe(data => {
         this.sales = data.sales;
-        console.log(this.sales);
+        console.log("Sales: ",data);
       },
         error => {
           console.log(error);

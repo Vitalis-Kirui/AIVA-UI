@@ -10,19 +10,22 @@
     <div class="col-md-8 mx-auto pt-2">
 
         <div class="sales mt-2">
-        
+
             <ul *ngFor="let sale of sales">
                 <li class="text-bg-secondary p-2">{{sale.clientsname | uppercase}}</li>
                 <p><span class="text-primary">Product's name: </span>{{sale.productname}}</p>
+                <p><span class="text-primary">Quantity: </span>{{sale.quantity}}</p>
                 <p><span class="text-primary">Payment method: </span>{{sale.payment}}</p>
                 <p><span class="text-primary">Transaction code: </span>{{sale.transactioncode}}</p>
                 <p><span class="text-primary">Total cost:</span> {{sale.clienttotal}}</p>
                 <p><span class="text-primary">Buying cost:</span> {{sale.buyingtotal}}</p>
-                <p *ngIf="sale.projection > 0"><span class="text-black bg-primary p-2">Projection:</span> {{sale.projection}}</p>
-                <p *ngIf="sale.projection < 0"><span class="text-black bg-danger p-2">Projection:</span> {{sale.projection}}</p>
+                <p *ngIf="sale.projection > 0"><span class="text-black bg-primary p-2">Projection:</span>
+                    {{sale.projection}}</p>
+                <p *ngIf="sale.projection < 0"><span class="text-black bg-danger p-2">Projection:</span>
+                    {{sale.projection}}</p>
                 <p><span class="text-primary">Date: </span>{{sale.createdAt | date}}</p>
             </ul>
-        
+
         </div>
 
     </div>
