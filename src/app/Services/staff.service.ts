@@ -55,4 +55,9 @@ export class StaffService {
     return this.http.put<any>(environment.updatestaff + id, newstaffdata);
   };
 
+  // Starting session
+  startsession(nationalid: any): Observable<any>{
+    return this.http.get<any>(environment.startsession + nationalid);
+  }
+
 }

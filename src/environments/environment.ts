@@ -37,7 +37,8 @@ export const environment = {
   attendantstaffs: 'http://localhost:3000/staffs/attendants',
   singlestaff: 'http://localhost:3000/staffs/staff/',
   deletestaff: 'http://localhost:3000/staffs/staff/',
-  updatestaff: 'http://localhost:3000/staffs/staff/'
+  updatestaff: 'http://localhost:3000/staffs/staff/',
+  startsession: 'http://localhost:3000/staffs/start-session?nationalid='
 };
 
 /*

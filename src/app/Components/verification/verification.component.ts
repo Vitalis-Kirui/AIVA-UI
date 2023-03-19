@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
+import { StaffService } from 'src/app/Services/staff.service';
 
 @Component({
   selector: 'app-verification',
@@ -15,16 +16,7 @@ export class VerificationComponent implements OnInit {
   // Form variable
   verificationform!:FormGroup
 
-  constructor(private router:Router, private fbservice:FormBuilder) { }
-
-  // Verify function
-  verifystaffnumber() {
-
-    console.log(this.verificationform.value);
-    this.success = true;
-    this.router.navigate(['menu']);
-    
-  }
+  constructor(private router:Router, private fbservice:FormBuilder, private staffservice:StaffService) { }
 
   ngOnInit() {
 
@@ -33,6 +25,27 @@ export class VerificationComponent implements OnInit {
     })
 
   }
+
+    // Verify function
+    verifystaffnumber() {
+
+      console.log(this.verificationform.value);
+  
+    // Checking staff existence
+
+    const nationalid = this.verificationform.get('staffnumber')?.value;
+    this.staffservice.startsession(nationalid)
+        .subscribe(data => {
+          console.log(data);
+
+          this.success = true;
+          this.router.navigate(['menu']);
+        },
+        error =>{
+          console.log(error);
+        })
+      
+    }
 
   // Getter function
   get staffnumber() {
