@@ -17,24 +17,25 @@ import { StockDetailsComponent } from './Components/stock-details/stock-details.
 import { UpdateStaffComponent } from './Components/update-staff/update-staff.component';
 import { UpdateStockComponent } from './Components/update-stock/update-stock.component';
 import { VerificationComponent } from './Components/verification/verification.component';
+import { VerifyGuard } from './Guards/verify.guard';
 
 const routes: Routes = [
   { path: '', component: HomeComponent },
   { path: 'verify', component: VerificationComponent },
-  { path: 'adding', component: AddingComponent },
-  { path: 'cyber', component: CyberComponent },
-  { path: 'expenses', component: ExpensesComponent },
-  { path: 'reports', component: ReportsComponent },
-  { path: 'sales', component: SalesComponent },
-  { path: 'staffs', component: StaffsComponent },
-  { path: 'menu', component: MenuComponent },
-  { path: 'sales/full-report', component: SalesFullComponent },
-  {path: 'expenses/full-report', component: ExpensesFullComponent},
-  {path: 'cyber/full-report', component: CyberFullComponent},
-  { path: 'staffs/staff/:id', component: StaffDetailsComponent },
-  { path: 'adding/stocks/stock/:id', component: StockDetailsComponent },
-  { path: 'adding/stocks/update-stock/:id', component: UpdateStockComponent },
-  { path: 'staffs/update-staff/:id', component: UpdateStaffComponent },
+  { path: 'adding', component: AddingComponent, canActivate:[VerifyGuard] },
+  { path: 'cyber', component: CyberComponent, canActivate:[VerifyGuard] },
+  { path: 'expenses', component: ExpensesComponent, canActivate:[VerifyGuard] },
+  { path: 'reports', component: ReportsComponent, canActivate:[VerifyGuard] },
+  { path: 'sales', component: SalesComponent, canActivate:[VerifyGuard] },
+  { path: 'staffs', component: StaffsComponent, canActivate:[VerifyGuard] },
+  { path: 'menu', component: MenuComponent, canActivate:[VerifyGuard] },
+  { path: 'sales/full-report', component: SalesFullComponent, canActivate:[VerifyGuard] },
+  {path: 'expenses/full-report', component: ExpensesFullComponent, canActivate:[VerifyGuard]},
+  {path: 'cyber/full-report', component: CyberFullComponent, canActivate:[VerifyGuard]},
+  { path: 'staffs/staff/:id', component: StaffDetailsComponent, canActivate:[VerifyGuard] },
+  { path: 'adding/stocks/stock/:id', component: StockDetailsComponent , canActivate:[VerifyGuard]},
+  { path: 'adding/stocks/update-stock/:id', component: UpdateStockComponent, canActivate:[VerifyGuard] },
+  { path: 'staffs/update-staff/:id', component: UpdateStaffComponent, canActivate:[VerifyGuard] },
   { path: '**', component: Error404Component },
 ];
 
