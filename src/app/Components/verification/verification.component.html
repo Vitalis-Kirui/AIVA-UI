@@ -7,8 +7,11 @@
 
             <div class="form-group">
                 <label for="" class="mb-2">Enter your staff number</label>
-                <input type="text" class="form-control" name="staffnumber" formControlName="staffnumber"
+                <input type="number" class="form-control" name="staffnumber" formControlName="staffnumber"
                     [class.is-invalid]="staffnumber?.invalid && staffnumber?.dirty">
+
+                    <!-- Wrong verifications -->
+                    <small class="text-danger" *ngIf="wrongverification">Wrong staff number.</small>
 
                 <!-- Error messages -->
                 <div class="text-danger" *ngIf="staffnumber?.invalid && staffnumber?.dirty">

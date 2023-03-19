@@ -1,3 +1,4 @@
+import { HttpErrorResponse } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
@@ -12,6 +13,9 @@ export class VerificationComponent implements OnInit {
 
   // Success verification
   staffverified: any
+
+  // False verification
+  wrongverification: boolean = false;
   
   // Form variable
   verificationform!:FormGroup
@@ -45,7 +49,16 @@ export class VerificationComponent implements OnInit {
           this.router.navigate(['menu']);
         },
         error =>{
-          console.log(error);
+          // Getting error response
+          if (error instanceof HttpErrorResponse) {
+            if (error.status === 404) {
+              console.log("User not found")
+            }
+            else {
+              console.log(error);
+              this.wrongverification = true;
+            }
+          }
         })
       
     }
