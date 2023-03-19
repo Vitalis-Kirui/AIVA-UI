@@ -11,7 +11,7 @@ import { StaffService } from 'src/app/Services/staff.service';
 export class VerificationComponent implements OnInit {
 
   // Success verification
-  success: boolean = false;
+  staffverified: any
   
   // Form variable
   verificationform!:FormGroup
@@ -38,7 +38,10 @@ export class VerificationComponent implements OnInit {
         .subscribe(data => {
           console.log(data);
 
-          this.success = true;
+          this.staffverified = data.staff[0].nationalid;
+
+          localStorage.setItem('activestaff', this.staffverified);
+
           this.router.navigate(['menu']);
         },
         error =>{
