@@ -40,7 +40,7 @@ export class VerificationComponent implements OnInit {
 
           this.staffverified = data.staff[0].nationalid;
 
-          localStorage.setItem('activestaff', this.staffverified);
+          localStorage.setItem('active staff', this.staffverified);
 
           this.router.navigate(['menu']);
         },

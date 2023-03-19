@@ -9,7 +9,7 @@ export class ActiveStaffService {
 
   // Checking an active staff member
   activestaff() {
-    return !!localStorage.getItem('Active staff');
+    return !!localStorage.getItem('active staff');
   }
 
 }
