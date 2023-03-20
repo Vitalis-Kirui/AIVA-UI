@@ -42,11 +42,21 @@ export class VerificationComponent implements OnInit {
         .subscribe(data => {
           console.log(data);
 
-          this.staffverified = data.staff[0].nationalid;
+          if(data.staff[0]==null){
 
-          localStorage.setItem('active staff', this.staffverified);
+            this.wrongverification = true;
 
-          this.router.navigate(['menu']);
+          }
+          else{
+
+            this.staffverified = data.staff[0].nationalid;
+
+            localStorage.setItem('active staff', this.staffverified);
+
+            this.router.navigate(['menu']);
+
+          }
+
         },
         error =>{
           // Getting error response
