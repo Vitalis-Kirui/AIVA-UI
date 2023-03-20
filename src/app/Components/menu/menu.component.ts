@@ -40,6 +40,12 @@ export class MenuComponent implements OnInit {
     this.router.navigate(['reports']);
   }
 
+// Sign out staff
+signoutstaff(){
+  localStorage.removeItem('active staff');
+  window.location.reload();
+}
+
   ngOnInit(): void {
   }
 
