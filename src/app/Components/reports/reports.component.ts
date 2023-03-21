@@ -14,6 +14,7 @@ export class ReportsComponent implements OnInit {
   // Cyber services array
   cyberservices: any = [];
   totalcyberearnings:any;
+  totalservices:any;
   
   // Sales array
   sales: any = [];
@@ -23,6 +24,7 @@ export class ReportsComponent implements OnInit {
 
   // expenses array
   expenses: any = [];
+  totalexpenses:any;
   todaystotalexpenses:any;
 
   constructor(private router: Router, private cyberservice: CyberService,
@@ -55,6 +57,7 @@ export class ReportsComponent implements OnInit {
       .subscribe(data => { 
         this.cyberservices = data.cyberservices;
         this.totalcyberearnings = data.todaystotal;
+        this.totalservices = data.total;
         console.log("Cyber",data);
       },
         error => {
@@ -81,6 +84,7 @@ export class ReportsComponent implements OnInit {
     this.expenseservice.gettodayexpenses()
       .subscribe(data => {
         this.expenses = data.expenses;
+        this.totalexpenses = data.total;
         this.todaystotalexpenses = data.todaystotal;
         console.log(data);
       },
