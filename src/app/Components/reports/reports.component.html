@@ -22,7 +22,10 @@
                 <p>Number of stocks sold: {{totalstocksold}}</p>
                 <p>Worth of stocks sold: {{totalsoldworth}}</p>
                 <p>Earnings from stock sold: {{totalsoldearnings}}</p>
-                <p>Projection: {{totalsoldearnings-totalsoldworth}}</p>
+                <p *ngIf="totalsoldearnings - totalsoldworth > 0">Projection: {{totalsoldearnings-totalsoldworth}} <span
+                        class="text-bg-success p-2">Profit</span></p>
+                <p *ngIf="totalsoldearnings - totalsoldworth < 0">Projection: {{totalsoldearnings-totalsoldworth}} <span
+                        class="text-bg-success p-2">Loss</span></p>
             </div>
 
             <div class="sales mt-2">
