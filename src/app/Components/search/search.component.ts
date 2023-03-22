@@ -56,6 +56,34 @@ export class SearchComponent implements OnInit {
       }
       );
 
+      // Search cyber services
+      this.cyberservice.getservicesbydate(date)
+      .subscribe(data => {
+
+        this.cyberservices = data.cyberservices;
+
+        console.log("Cyber: ",data);
+
+        },
+        error =>{
+          console.log(error);
+        }
+        );
+
+      // Search expenses
+      this.expenseservice.getexpensesbydate(date)
+      .subscribe(data => {
+
+        this.cyberservices = data.expenses;
+
+        console.log("Expenses: ",data);
+
+        },
+        error =>{
+          console.log(error);
+        }
+        );
+
   }
 
 }
