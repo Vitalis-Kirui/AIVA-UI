@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormGroup } from '@angular/forms';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { SaleService } from 'src/app/Services/sale.service';
 
@@ -19,7 +19,7 @@ export class SalesFullComponent implements OnInit {
   // Search sales by date
   dateForm!:FormGroup;
 
-  constructor(private router : Router, private salesservice : SaleService) { }
+  constructor(private router : Router, private salesservice : SaleService, private fbservice:FormBuilder) { }
 
     // Back to reports function
   backtoreports() {
@@ -42,11 +42,25 @@ export class SalesFullComponent implements OnInit {
         }
       )
 
+      // Date form model
+      this.dateForm = this.fbservice.group({
+
+        date:['', [Validators.required]]
+
+      })
+
+  }
+
+  // Date getter function
+  get date() {
+    return this.dateForm.get('date');
   }
 
   // Date search function
   datesearch(){
-    
+
+    console.log(this.dateForm.value);
+
   }
 
 }
