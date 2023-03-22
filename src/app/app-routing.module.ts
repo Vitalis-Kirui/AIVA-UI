@@ -11,6 +11,7 @@ import { MenuComponent } from './Components/menu/menu.component';
 import { ReportsComponent } from './Components/reports/reports.component';
 import { SalesFullComponent } from './Components/sales-full/sales-full.component';
 import { SalesComponent } from './Components/sales/sales.component';
+import { SearchComponent } from './Components/search/search.component';
 import { StaffDetailsComponent } from './Components/staff-details/staff-details.component';
 import { StaffsComponent } from './Components/staffs/staffs.component';
 import { StockDetailsComponent } from './Components/stock-details/stock-details.component';
@@ -29,6 +30,7 @@ const routes: Routes = [
   { path: 'sales', component: SalesComponent, canActivate:[VerifyGuard] },
   { path: 'staffs', component: StaffsComponent, canActivate:[VerifyGuard] },
   { path: 'menu', component: MenuComponent, canActivate:[VerifyGuard] },
+  { path: 'search', component: SearchComponent, canActivate:[VerifyGuard] },
   { path: 'sales/full-report', component: SalesFullComponent, canActivate:[VerifyGuard] },
   {path: 'expenses/full-report', component: ExpensesFullComponent, canActivate:[VerifyGuard]},
   {path: 'cyber/full-report', component: CyberFullComponent, canActivate:[VerifyGuard]},

@@ -40,6 +40,11 @@ export class MenuComponent implements OnInit {
     this.router.navigate(['reports']);
   }
 
+  // Search
+  search() {
+    this.router.navigate(['search']);
+  }
+
 // Sign out staff
 signoutstaff(){
   localStorage.removeItem('active staff');

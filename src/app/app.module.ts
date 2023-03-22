@@ -22,6 +22,7 @@ import { StaffDetailsComponent } from './Components/staff-details/staff-details.
 import { StockDetailsComponent } from './Components/stock-details/stock-details.component';
 import { UpdateStaffComponent } from './Components/update-staff/update-staff.component';
 import { UpdateStockComponent } from './Components/update-stock/update-stock.component';
+import { SearchComponent } from './Components/search/search.component';
 
 @NgModule({
   declarations: [
@@ -42,7 +43,8 @@ import { UpdateStockComponent } from './Components/update-stock/update-stock.com
     StaffDetailsComponent,
     StockDetailsComponent,
     UpdateStaffComponent,
-    UpdateStockComponent
+    UpdateStockComponent,
+    SearchComponent
   ],
   imports: [
     BrowserModule,
