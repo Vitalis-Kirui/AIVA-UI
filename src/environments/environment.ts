@@ -27,6 +27,7 @@ export const environment = {
   newsale:'http://localhost:3000/sales/new-sale',
   allsales:'http://localhost:3000/sales/all-sales',
   todaysales: 'http://localhost:3000/sales/today-sales',
+  salesbydate: 'http://localhost:3000/sales/by-date?date=',
   
   // Staffs endpoints
   newstaff:'http://localhost:3000/staffs/new-staff',

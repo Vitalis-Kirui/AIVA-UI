@@ -18,6 +18,7 @@ export class SalesFullComponent implements OnInit {
 
   // Search sales by date
   dateForm!:FormGroup;
+  datesales: any = [];
 
   constructor(private router : Router, private salesservice : SaleService, private fbservice:FormBuilder) { }
 
@@ -59,7 +60,20 @@ export class SalesFullComponent implements OnInit {
   // Date search function
   datesearch(){
 
-    console.log(this.dateForm.value);
+    const date = this.dateForm.value.date;
+
+    this.salesservice.getSalesByDate(date)
+      .subscribe(data => {
+
+        this.datesales = data.sales;
+
+        console.log(data);
+
+      },
+      error =>{
+        console.log(error);
+      }
+      );
 
   }
 

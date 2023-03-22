@@ -25,4 +25,9 @@ export class SaleService {
     return this.http.get<any>(environment.todaysales);
   }
 
+  // Getting sales by date
+  getSalesByDate(date: Date): Observable<any>{
+    return this.http.get<any>(environment.salesbydate+date);
+  }
+
 }
