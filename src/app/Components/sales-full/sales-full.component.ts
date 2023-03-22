@@ -16,11 +16,7 @@ export class SalesFullComponent implements OnInit {
   totalsoldworth:any;
   totalsoldearnings:any;
 
-  // Search sales by date
-  dateForm!:FormGroup;
-  datesales: any = [];
-
-  constructor(private router : Router, private salesservice : SaleService, private fbservice:FormBuilder) { }
+  constructor(private router : Router, private salesservice : SaleService) { }
 
     // Back to reports function
   backtoreports() {
@@ -42,38 +38,6 @@ export class SalesFullComponent implements OnInit {
           console.log(error);
         }
       )
-
-      // Date form model
-      this.dateForm = this.fbservice.group({
-
-        date:['', [Validators.required]]
-
-      })
-
-  }
-
-  // Date getter function
-  get date() {
-    return this.dateForm.get('date');
-  }
-
-  // Date search function
-  datesearch(){
-
-    const date = this.dateForm.value.date;
-
-    this.salesservice.getSalesByDate(date)
-      .subscribe(data => {
-
-        this.datesales = data.sales;
-
-        console.log(data);
-
-      },
-      error =>{
-        console.log(error);
-      }
-      );
 
   }
 

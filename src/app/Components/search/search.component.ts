@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { CyberService } from 'src/app/Services/cyber.service';
+import { ExpenseService } from 'src/app/Services/expense.service';
+import { SaleService } from 'src/app/Services/sale.service';
 
 @Component({
   selector: 'app-search',
@@ -11,7 +14,13 @@ export class SearchComponent implements OnInit {
   // Date variables
   dateForm!:FormGroup;
 
-  constructor(private fbservice:FormBuilder) { }
+  // Arrays
+  datesales :any = [];
+  expenses :any = [];
+  cyberservices :any = [];
+
+  constructor(private fbservice:FormBuilder, private salesservice:SaleService, 
+    private expenseservice:ExpenseService, private cyberservice:CyberService) { }
 
   ngOnInit() {
 
@@ -28,6 +37,24 @@ export class SearchComponent implements OnInit {
 
   // Date search
   datesearch(){
+
+    const date = this.dateForm.value.date;
+
+    console.log(date);
+
+    // Search sales
+    this.salesservice.getSalesByDate(date)
+      .subscribe(data => {
+
+        this.datesales = data.sales;
+
+        console.log("Sales: ",data);
+
+      },
+      error =>{
+        console.log(error);
+      }
+      );
 
   }
 
