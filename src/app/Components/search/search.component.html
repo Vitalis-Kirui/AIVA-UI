@@ -21,14 +21,73 @@
 
                 </div>
 
-                <button class="btn btn-primary btn-rounded m-2" type="submit" [disabled]="date?.invalid">Get Sales</button>
+                <button class="btn btn-primary btn-rounded mt-3" type="submit" [disabled]="date?.invalid">Get Reports</button>
 
               </form>
 
         </div>
 
+        <hr class="mt-4">
+
         <!-- Displaying results -->
-        <div class="col-md-12">
+        <div class="col-md-12 py-3">
+
+            <!-- Sales -->
+            <h2 class="text-center">Sales</h2>
+            <hr>
+            <div class="sales mt-2">
+
+                <ul *ngFor="let sale of sales">
+                    <li class="text-bg-success p-2">{{sale.clientsname | uppercase}}</li>
+                    <p><span class="text-primary">Product's name: </span>{{sale.productname}}</p>
+                    <p><span class="text-primary">Quantity: </span>{{sale.quantity}}</p>
+                    <p><span class="text-primary">Payment method: </span>{{sale.payment}}</p>
+                    <p><span class="text-primary">Transaction code:</span> {{sale.transactioncode}}</p>
+                    <p><span class="text-primary">Total cost:</span> {{sale.clienttotal}}</p>
+                    <p><span class="text-primary">Buying cost:</span> {{sale.buyingtotal}}</p>
+                    <p *ngIf="sale.projection > 0"><span class="text-black bg-primary p-2">Projection:</span>
+                        {{sale.projection}}</p>
+                    <p *ngIf="sale.projection < 0"><span class="text-black bg-danger p-2">Projection:</span>
+                        {{sale.projection}}</p>
+
+                </ul>
+
+            </div>
+            <hr>
+
+            <!-- Cyber services -->
+
+            <h2 class="text-center">Cyber Services</h2>
+            <hr>
+            <div class="cyberservices mt-2">
+
+                <ul *ngFor="let service of cyberservices">
+                    <li class="text-bg-success p-2">{{service.clientsname | uppercase}}</li>
+                    <p><span class="text-primary">Service name: </span>{{service.servicename}}</p>
+                    <p><span class="text-primary">Payment method: </span>{{service.payment}}</p>
+                    <p><span class="text-primary">Transaction code: </span>{{service.transactioncode}}</p>
+                    <p><span class="text-primary">Quantity </span>{{service.quantity}}</p>
+                    <P><span class="text-primary">Total cost: </span>{{service.totalcost}}</P>
+                </ul>
+
+            </div>
+
+            <hr>
+
+            <!-- Expenses -->
+
+            <h2 class="text-center">Expenses</h2>
+            <hr>
+            <div class="expenses mt-2">
+
+                <ul *ngFor="let expense of expenses">
+                    <li class="text-bg-success p-2">{{expense.name | uppercase}}</li>
+                    <p><span class="text-primary">Description: </span>{{expense.description}}</p>
+                    <p><span class="text-primary">Total cost: </span>{{expense.totalcost}} </p>
+                </ul>
+
+            </div>
+            <hr>
 
         </div>
 

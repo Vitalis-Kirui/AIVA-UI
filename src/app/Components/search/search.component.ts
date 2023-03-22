@@ -15,7 +15,7 @@ export class SearchComponent implements OnInit {
   dateForm!:FormGroup;
 
   // Arrays
-  datesales :any = [];
+  sales :any = [];
   expenses :any = [];
   cyberservices :any = [];
 
@@ -46,9 +46,9 @@ export class SearchComponent implements OnInit {
     this.salesservice.getSalesByDate(date)
       .subscribe(data => {
 
-        this.datesales = data.sales;
+        this.sales = data.sales;
 
-        console.log("Sales: ",data);
+        console.log("Sales: ",this.sales);
 
       },
       error =>{
@@ -62,7 +62,7 @@ export class SearchComponent implements OnInit {
 
         this.cyberservices = data.cyberservices;
 
-        console.log("Cyber: ",data);
+        console.log("Cyber: ",this.cyberservices);
 
         },
         error =>{
@@ -74,9 +74,9 @@ export class SearchComponent implements OnInit {
       this.expenseservice.getexpensesbydate(date)
       .subscribe(data => {
 
-        this.cyberservices = data.expenses;
+        this.expenses = data.expenses;
 
-        console.log("Expenses: ",data);
+        console.log("Expenses: ",this.expenses);
 
         },
         error =>{
