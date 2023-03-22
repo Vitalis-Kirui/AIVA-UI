@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { FormGroup } from '@angular/forms';
 import { Router } from '@angular/router';
 import { SaleService } from 'src/app/Services/sale.service';
 
@@ -14,6 +15,9 @@ export class SalesFullComponent implements OnInit {
   totalstocksold:any;
   totalsoldworth:any;
   totalsoldearnings:any;
+
+  // Search sales by date
+  dateForm!:FormGroup;
 
   constructor(private router : Router, private salesservice : SaleService) { }
 
@@ -38,6 +42,11 @@ export class SalesFullComponent implements OnInit {
         }
       )
 
+  }
+
+  // Date search function
+  datesearch(){
+    
   }
 
 }

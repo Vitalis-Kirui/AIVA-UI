@@ -37,6 +37,32 @@
 
     </div>
 
+    <!-- Search by date -->
+    <div class="col-md-6 mx-auto py-3">
+
+        <div class="text-center">
+            <h2>Search Sales By Date</h2>
+            <hr>
+
+
+            <form [formGroup]="dateForm" (ngSubmit)="datesearch()">
+
+                <div class="form-group">
+
+                    <label for="date">Select Date:</label> 
+                    <br>
+                    <input type="date" id="date" name="date" formControlName="date">
+
+                </div>
+
+                <button class="btn btn-primary btn-rounded m-2" type="submit">Get Sales</button>
+
+              </form>
+
+        </div>
+
+    </div>
+
     <hr>
     <!-- Go back to reports button -->
     <button class="btn btn-secondary m-2 btn-rounded" type="button" (click)="backtoreports()"> Back</button>
