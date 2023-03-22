@@ -25,4 +25,9 @@ export class CyberService {
     return this.http.get<any>(environment.todaycyberservices);
   }
 
+  // Get services by date
+  getservicesbydate(date: Date): Observable<any>{
+    return this.http.get<any>(environment.cyberbydate+date);
+  }
+
 }

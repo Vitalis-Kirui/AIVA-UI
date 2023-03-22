@@ -25,4 +25,9 @@ export class ExpenseService {
     return this.http.get<any>(environment.todayexpenses);
   }
   
+  // Get expenses by date
+  getexpensesbydate(date: Date): Observable<any> {
+    return this.http.get<any>(environment.expensesbydate+date);
+  }
+
 }

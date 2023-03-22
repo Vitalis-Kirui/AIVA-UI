@@ -16,12 +16,15 @@ export const environment = {
   // Cyber endpoints
   registercyberservice: 'http://localhost:3000/cyber/new-cyber-service',
   allcyberservices:'http://localhost:3000/cyber/all-cyber-services',
+  cyberbydate: 'http://localhost:3000/cyber/by-date?date=',
   todaycyberservices: 'http://localhost:3000/cyber/today-cyber-services',
   
   // Expenses endpoints
   newexpense:'http://localhost:3000/expenses/new-expense',
   allexpenses:'http://localhost:3000/expenses/all-expenses',
   todayexpenses: 'http://localhost:3000/expenses/today-expenses',
+  expensesbydate: 'http://localhost:3000/expenses/by-date?date=',
+
   
   // Sales endpoints
   newsale:'http://localhost:3000/sales/new-sale',
