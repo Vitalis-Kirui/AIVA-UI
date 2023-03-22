@@ -1,1 +1,37 @@
-<p>search works!</p>
+<div class="container">
+
+    <div class="row py-3">
+
+        <!-- Search form collumn -->
+        <div class="col-md-5 mx-auto form">
+
+            <div class="text-center">
+                <h1>Seach Reports By Date</h1>
+                <hr>
+                <p>Use the form below to enter a date and see daily full reports</p>
+            </div>
+
+            <form [formGroup]="dateForm" (ngSubmit)="datesearch()">
+
+                <div class="form-group">
+
+                    <label for="date">Enter Date:</label> 
+                    <br>
+                    <input type="date" id="date" name="date" formControlName="date">
+
+                </div>
+
+                <button class="btn btn-primary btn-rounded m-2" type="submit" [disabled]="date?.invalid">Get Sales</button>
+
+              </form>
+
+        </div>
+
+        <!-- Displaying results -->
+        <div class="col-md-12">
+
+        </div>
+
+    </div>
+
+</div>

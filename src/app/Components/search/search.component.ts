@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-search',
@@ -7,9 +8,27 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SearchComponent implements OnInit {
 
-  constructor() { }
+  // Date variables
+  dateForm!:FormGroup;
 
-  ngOnInit(): void {
+  constructor(private fbservice:FormBuilder) { }
+
+  ngOnInit() {
+
+    this.dateForm = this.fbservice.group({
+      date:['',[Validators.required]]
+    })
+
+  }
+
+  // Date getter function
+  get date() {
+    return this.dateForm.get('date');
+  }
+
+  // Date search
+  datesearch(){
+
   }
 
 }
