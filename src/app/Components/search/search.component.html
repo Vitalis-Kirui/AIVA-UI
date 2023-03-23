@@ -17,15 +17,16 @@
 
                 <div class="form-group">
 
-                    <label for="date">Enter Date:</label> 
+                    <label for="date">Enter Date:</label>
                     <br>
                     <input type="date" id="date" name="date" formControlName="date">
 
                 </div>
 
-                <button class="btn btn-primary btn-rounded mt-3" type="submit" [disabled]="date?.invalid">Get Reports</button>
+                <button class="btn btn-primary btn-rounded mt-3" type="submit" [disabled]="date?.invalid">Get
+                    Reports</button>
 
-              </form>
+            </form>
 
         </div>
 
@@ -35,9 +36,9 @@
         <div class="col-md-12 py-3">
 
             <!-- Sales -->
-            <h2 class="text-center" *ngIf="sales.lenght > 0">SALES</h2>
-            <hr *ngIf="sales.lenght > 0">
-            <div class="sales mt-2" *ngIf="sales.lenght > 0">
+            <h2 class="text-center" *ngIf="sales.length > 0">SALES</h2>
+            <hr *ngIf="sales.length > 0">
+            <div class="sales mt-2" *ngIf="sales.length > 0">
 
                 <ul *ngFor="let sale of sales">
                     <li class="text-bg-success p-2">{{sale.clientsname | uppercase}}</li>
@@ -59,9 +60,9 @@
 
             <!-- Cyber services -->
 
-            <h2 class="text-center" *ngIf="cyberservices.lenght > 0">CYBER SERVICES</h2>
-            <hr *ngIf="cyberservices.lenght > 0">
-            <div class="cyberservices mt-2" *ngIf="cyberservices.lenght > 0">
+            <h2 class="text-center" *ngIf="cyberservices.length > 0">CYBER SERVICES</h2>
+            <hr *ngIf="cyberservices.length > 0">
+            <div class="cyberservices mt-2" *ngIf="cyberservices.length > 0">
 
                 <ul *ngFor="let service of cyberservices">
                     <li class="text-bg-success p-2">{{service.clientsname | uppercase}}</li>
@@ -78,9 +79,9 @@
 
             <!-- Expenses -->
 
-            <h2 class="text-center" *ngIf="expenses.lenght > 0">EXPENSES</h2>
-            <hr *ngIf="expenses.lenght > 0">
-            <div class="expenses mt-2" *ngIf="expenses.lenght > 0">
+            <h2 class="text-center" *ngIf="expenses.length > 0">EXPENSES</h2>
+            <hr *ngIf="expenses.length > 0">
+            <div class="expenses mt-2" *ngIf="expenses.length > 0">
 
                 <ul *ngFor="let expense of expenses">
                     <li class="text-bg-success p-2">{{expense.name | uppercase}}</li>
