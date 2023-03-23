@@ -35,9 +35,9 @@
         <div class="col-md-12 py-3">
 
             <!-- Sales -->
-            <h2 class="text-center">SALES</h2>
-            <hr>
-            <div class="sales mt-2">
+            <h2 class="text-center" *ngIf="sales.lenght > 0">SALES</h2>
+            <hr *ngIf="sales.lenght > 0">
+            <div class="sales mt-2" *ngIf="sales.lenght > 0">
 
                 <ul *ngFor="let sale of sales">
                     <li class="text-bg-success p-2">{{sale.clientsname | uppercase}}</li>
@@ -59,9 +59,9 @@
 
             <!-- Cyber services -->
 
-            <h2 class="text-center">CYBER SERVICES</h2>
-            <hr>
-            <div class="cyberservices mt-2">
+            <h2 class="text-center" *ngIf="cyberservices.lenght > 0">CYBER SERVICES</h2>
+            <hr *ngIf="cyberservices.lenght > 0">
+            <div class="cyberservices mt-2" *ngIf="cyberservices.lenght > 0">
 
                 <ul *ngFor="let service of cyberservices">
                     <li class="text-bg-success p-2">{{service.clientsname | uppercase}}</li>
@@ -78,9 +78,9 @@
 
             <!-- Expenses -->
 
-            <h2 class="text-center">EXPENSES</h2>
-            <hr>
-            <div class="expenses mt-2">
+            <h2 class="text-center" *ngIf="expenses.lenght > 0">EXPENSES</h2>
+            <hr *ngIf="expenses.lenght > 0">
+            <div class="expenses mt-2" *ngIf="expenses.lenght > 0">
 
                 <ul *ngFor="let expense of expenses">
                     <li class="text-bg-success p-2">{{expense.name | uppercase}}</li>
