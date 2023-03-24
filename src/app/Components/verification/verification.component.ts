@@ -55,6 +55,12 @@ export class VerificationComponent implements OnInit {
 
             this.router.navigate(['menu']);
 
+            // Listen for the beforeunload event
+            window.addEventListener('beforeunload', function(event) {
+              // Remove the staff number from local storage
+              localStorage.removeItem('active staff');
+            });
+
           }
 
         },
