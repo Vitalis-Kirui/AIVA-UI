@@ -35,6 +35,7 @@ export class AddingComponent implements OnInit {
   // See stock display function
   seestock() {
     this.addingstock = false;
+    this.seeingstock = true;
   }
 
   ngOnInit() {
@@ -93,7 +94,7 @@ export class AddingComponent implements OnInit {
       .subscribe(data => {
         console.log(data);
         this.stockadditionform.reset();
-    window.location.reload();
+        window.location.reload();
       },
         error => {
           console.log(error);
