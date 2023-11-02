@@ -1,11 +1,5 @@
 {
-    "editor.fontLigatures": false,
-    "editor.fontWeight": "normal",
-    "terminal.integrated.defaultProfile.linux": null,
-    "editor.fontFamily": "'Jost', sans-serif",
-    "terminal.integrated.fontSize": 15,
-    "terminal.integrated.fontWeightBold": "normal",
-    "editor.fontSize": 17,
-    "terminal.integrated.fontFamily": "'Jost', sans-serif",
-    "window.zoomLevel": -0.5
+    "editor.fontFamily": "'Bellefair', serif",
+    "terminal.integrated.fontFamily": "'Bellefair', serif",
+    "terminal.integrated.fontSize": 16
 }

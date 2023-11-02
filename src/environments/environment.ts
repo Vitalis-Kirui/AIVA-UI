@@ -6,43 +6,43 @@ export const environment = {
   production: false,
 
   // Stock endpoints
-  addstock: 'http://localhost:3000/stock/new-stock',
-  allstock: 'http://localhost:3000/stock/all-stocks',
-  singlestock: 'http://localhost:3000/stock/single-stock/',
-  deletestock: 'http://localhost:3000/stock/delete-stock/',
-  updatestock: 'http://localhost:3000/stock/update-stock/',
+  addstock: 'https://aiva-bookshop.cyclic.app/stock/new-stock',
+  allstock: 'https://aiva-bookshop.cyclic.app/stock/all-stocks',
+  singlestock: 'https://aiva-bookshop.cyclic.app/stock/single-stock/',
+  deletestock: 'https://aiva-bookshop.cyclic.app/stock/delete-stock/',
+  updatestock: 'https://aiva-bookshop.cyclic.app/stock/update-stock/',
 
   
   // Cyber endpoints
-  registercyberservice: 'http://localhost:3000/cyber/new-cyber-service',
-  allcyberservices:'http://localhost:3000/cyber/all-cyber-services',
-  cyberbydate: 'http://localhost:3000/cyber/by-date?date=',
-  todaycyberservices: 'http://localhost:3000/cyber/today-cyber-services',
+  registercyberservice: 'https://aiva-bookshop.cyclic.app/cyber/new-cyber-service',
+  allcyberservices:'https://aiva-bookshop.cyclic.app/cyber/all-cyber-services',
+  cyberbydate: 'https://aiva-bookshop.cyclic.app/cyber/by-date?date=',
+  todaycyberservices: 'https://aiva-bookshop.cyclic.app/cyber/today-cyber-services',
   
   // Expenses endpoints
-  newexpense:'http://localhost:3000/expenses/new-expense',
-  allexpenses:'http://localhost:3000/expenses/all-expenses',
-  todayexpenses: 'http://localhost:3000/expenses/today-expenses',
-  expensesbydate: 'http://localhost:3000/expenses/by-date?date=',
+  newexpense:'https://aiva-bookshop.cyclic.app/expenses/new-expense',
+  allexpenses:'https://aiva-bookshop.cyclic.app/expenses/all-expenses',
+  todayexpenses: 'https://aiva-bookshop.cyclic.app/expenses/today-expenses',
+  expensesbydate: 'https://aiva-bookshop.cyclic.app/expenses/by-date?date=',
 
   
   // Sales endpoints
-  newsale:'http://localhost:3000/sales/new-sale',
-  allsales:'http://localhost:3000/sales/all-sales',
-  todaysales: 'http://localhost:3000/sales/today-sales',
-  salesbydate: 'http://localhost:3000/sales/by-date?date=',
+  newsale:'https://aiva-bookshop.cyclic.app/sales/new-sale',
+  allsales:'https://aiva-bookshop.cyclic.app/sales/all-sales',
+  todaysales: 'https://aiva-bookshop.cyclic.app/sales/today-sales',
+  salesbydate: 'https://aiva-bookshop.cyclic.app/sales/by-date?date=',
   
   // Staffs endpoints
-  newstaff:'http://localhost:3000/staffs/new-staff',
-  allstaffs:'http://localhost:3000/staffs/all-staffs',
-  ceostaffs: 'http://localhost:3000/staffs/ceos',
-  managementstaffs:'http://localhost:3000/staffs/management',
-  supervisorstaffs:'http://localhost:3000/staffs/supervisors',
-  attendantstaffs: 'http://localhost:3000/staffs/attendants',
-  singlestaff: 'http://localhost:3000/staffs/staff/',
-  deletestaff: 'http://localhost:3000/staffs/staff/',
-  updatestaff: 'http://localhost:3000/staffs/staff/',
-  startsession: 'http://localhost:3000/staffs/start-session?nationalid='
+  newstaff:'https://aiva-bookshop.cyclic.app/staffs/new-staff',
+  allstaffs:'https://aiva-bookshop.cyclic.app/staffs/all-staffs',
+  ceostaffs: 'https://aiva-bookshop.cyclic.app/staffs/ceos',
+  managementstaffs:'https://aiva-bookshop.cyclic.app/staffs/management',
+  supervisorstaffs:'https://aiva-bookshop.cyclic.app/staffs/supervisors',
+  attendantstaffs: 'https://aiva-bookshop.cyclic.app/staffs/attendants',
+  singlestaff: 'https://aiva-bookshop.cyclic.app/staffs/staff/',
+  deletestaff: 'https://aiva-bookshop.cyclic.app/staffs/staff/',
+  updatestaff: 'https://aiva-bookshop.cyclic.app/staffs/staff/',
+  startsession: 'https://aiva-bookshop.cyclic.app/staffs/start-session?nationalid='
 };
 
 /*
