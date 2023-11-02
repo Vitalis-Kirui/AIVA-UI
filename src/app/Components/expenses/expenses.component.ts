@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { UntypedFormBuilder, UntypedFormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { ExpenseService } from 'src/app/Services/expense.service';
 
@@ -11,9 +11,9 @@ import { ExpenseService } from 'src/app/Services/expense.service';
 export class ExpensesComponent implements OnInit {
 
   // Form variables
-  expenseform!: FormGroup;
+  expenseform!: UntypedFormGroup;
 
-  constructor(private fbservice:FormBuilder, private router:Router, private expenseservice: ExpenseService) { }
+  constructor(private fbservice:UntypedFormBuilder, private router:Router, private expenseservice: ExpenseService) { }
 
   ngOnInit() {
 

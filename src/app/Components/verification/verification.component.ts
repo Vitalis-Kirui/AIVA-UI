@@ -1,13 +1,13 @@
 import { HttpErrorResponse } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { UntypedFormBuilder, UntypedFormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { StaffService } from 'src/app/Services/staff.service';
 
 @Component({
   selector: 'app-verification',
   templateUrl: './verification.component.html',
-  styleUrls: ['./verification.component.css'],
+  styleUrls: ['./verification.component.css']
 })
 export class VerificationComponent implements OnInit {
   // Success verification
@@ -17,11 +17,11 @@ export class VerificationComponent implements OnInit {
   wrongverification: boolean = false;
 
   // Form variable
-  verificationform!: FormGroup;
+  verificationform!: UntypedFormGroup;
 
   constructor(
     private router: Router,
-    private fbservice: FormBuilder,
+    private fbservice: UntypedFormBuilder,
     private staffservice: StaffService
   ) {}
 

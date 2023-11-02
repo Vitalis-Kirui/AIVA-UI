@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { UntypedFormBuilder, UntypedFormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { CyberService } from 'src/app/Services/cyber.service';
 
@@ -11,9 +11,9 @@ import { CyberService } from 'src/app/Services/cyber.service';
 export class CyberComponent implements OnInit {
 
   // Forms variables
-  cyberform!: FormGroup;
+  cyberform!: UntypedFormGroup;
 
-  constructor(private fbservice : FormBuilder, private router:Router, private cyberservice : CyberService) { }
+  constructor(private fbservice : UntypedFormBuilder, private router:Router, private cyberservice : CyberService) { }
 
   ngOnInit() {
 

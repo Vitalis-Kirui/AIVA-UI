@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { UntypedFormBuilder, UntypedFormGroup, Validators } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 import { StaffService } from 'src/app/Services/staff.service';
 
@@ -11,7 +11,7 @@ import { StaffService } from 'src/app/Services/staff.service';
 export class UpdateStaffComponent implements OnInit {
 
    // Form variable
-  staffupdateform!: FormGroup;
+  staffupdateform!: UntypedFormGroup;
 
   // Work stations
   stations: any = ['All', 'Chebunyo', 'Kaboson']
@@ -25,7 +25,7 @@ export class UpdateStaffComponent implements OnInit {
   // Staff object
   existingdata: any = {};
 
-  constructor(private fbservice: FormBuilder, private staffservice: StaffService, private route: ActivatedRoute, private router:Router) { }
+  constructor(private fbservice: UntypedFormBuilder, private staffservice: StaffService, private route: ActivatedRoute, private router:Router) { }
 
 
   ngOnInit() {

@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { UntypedFormBuilder, UntypedFormGroup, Validators } from '@angular/forms';
 import { CyberService } from 'src/app/Services/cyber.service';
 import { ExpenseService } from 'src/app/Services/expense.service';
 import { SaleService } from 'src/app/Services/sale.service';
@@ -12,14 +12,14 @@ import { SaleService } from 'src/app/Services/sale.service';
 export class SearchComponent implements OnInit {
 
   // Date variables
-  dateForm!:FormGroup;
+  dateForm!:UntypedFormGroup;
 
   // Arrays
   sales :any = [];
   expenses :any = [];
   cyberservices :any = [];
 
-  constructor(private fbservice:FormBuilder, private salesservice:SaleService, 
+  constructor(private fbservice:UntypedFormBuilder, private salesservice:SaleService, 
     private expenseservice:ExpenseService, private cyberservice:CyberService) { }
 
   ngOnInit() {

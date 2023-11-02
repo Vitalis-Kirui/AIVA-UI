@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { UntypedFormBuilder, UntypedFormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { StockService } from 'src/app/Services/stock.service';
 
@@ -11,7 +11,7 @@ import { StockService } from 'src/app/Services/stock.service';
 export class AddingComponent implements OnInit {
 
   // Adding form variable
-  stockadditionform!: FormGroup;
+  stockadditionform!: UntypedFormGroup;
 
   // Stock array
   allstocks: any = [];
@@ -24,7 +24,7 @@ export class AddingComponent implements OnInit {
   addingstock: boolean = false;
   seeingstock: boolean = true;
 
-  constructor(private fbservice: FormBuilder, private router: Router, private stockservice:StockService) { }
+  constructor(private fbservice: UntypedFormBuilder, private router: Router, private stockservice:StockService) { }
   
   // Add stock display function
   addstock() {

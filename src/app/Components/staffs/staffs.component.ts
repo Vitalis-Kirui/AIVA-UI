@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { UntypedFormBuilder, UntypedFormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { StaffService } from 'src/app/Services/staff.service';
 
@@ -11,7 +11,7 @@ import { StaffService } from 'src/app/Services/staff.service';
 export class StaffsComponent implements OnInit {
 
   // Form variable
-  newstaffform!: FormGroup;
+  newstaffform!: UntypedFormGroup;
 
   // Work stations
   stations: any = ['All', 'Chebunyo', 'Kaboson']
@@ -26,7 +26,7 @@ export class StaffsComponent implements OnInit {
   seeexistingstaffs: boolean = false;
   addnewstaff: boolean = false;
 
-  constructor(private router:Router, private fbservice:FormBuilder, private staffservice : StaffService) { }
+  constructor(private router:Router, private fbservice:UntypedFormBuilder, private staffservice : StaffService) { }
 
   // Existing staff function
   existingstaffs() {
